@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+
+<h3>Articles</h3>
+<div class="divider"></div>
+{{ range .Data.Pages }}
+{{ if eq .Type "post" }}
+<div class="section">
+    {{ .Date.Format "02 January 2006" }}
+    <h5><a class="black-text" href="{{ .Permalink }}">{{ .Title }}</a></h5> 
+    <h6 class="grey-text text-darken-2">{{ .Params.subtitle }}</h6>
+    <b><a class="black-text" href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></b>
+    
+<!--    <blockquote>{{ .Summary }}</blockquote>-->
+    <a href="{{ .Permalink }}" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read</span></a>
+</div>
+<div class="divider"></div>
+{{ end }}
+{{ end }}
+
+{{ partial "footer.html" . }}

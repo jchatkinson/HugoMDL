@@ -1,0 +1,38 @@
+{{ partial "header.html" . }}
+
+<div class="row">
+    <div class="col s12 center-align">
+        <h3>{{ .Site.Params.name }}</h3>
+        <h6>{{ .Site.Params.description }}</h6>
+    </div>
+</div>
+
+<div class="divider"></div>
+{{ if (or (.Params.recentposts) (.Params.recentprojects)) }}
+<div class="row">
+    {{ if .Params.recentprojects }}
+    <div class="col s6">
+        <h5>Recent Projects:</h5>
+        <ul>
+            {{range first .Params.recentprojects (where .Site.Pages "Section" "project")}}
+            <li><a href="{{ .RelPermalink }}" class="grey-text text-darken-2">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }} {{ if .Params.recentposts }}
+    <div class="col s6">
+        <h5>Recent Posts:</h5>
+        <ul>
+            {{ range first .Params.recentposts (where .Site.Pages "Section" "post") }}
+            <li><a href="{{ .RelPermalink }}" class="grey-text text-darken-2">{{.Title}}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</div>
+{{ end }} {{ if .Content }}
+<div class="divider"></div>
+{{ .Content }} {{ end }}
+
+<div class="divider"></div>
+{{ partial "footer.html" . }}

@@ -1,0 +1,47 @@
+{{ partial "header.html" . }}
+
+<h3>My Current and Past Projects:</h3>
+<div class="divider"></div>
+
+<div class="row">
+{{ range .Data.Pages }}
+{{ if eq .Type "project" }}
+
+<!-- Responsive Cards for each project -->
+
+<div class="col s12 m6">
+  <div class="card hoverable medium">
+    <div class="card-image">
+      <img src="{{ .Params.cardimage }}">
+      <span class="card-title">{{ .Title }}</span>
+    </div>
+    <div class="card-content">
+      <p>{{ .Description }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{{ .Permalink }}">Details</a>
+        <!-- only show if a repolink is present in the front matter -->
+        {{ if .Params.repolink }}
+        <a href="{{ .Params.repolink }}" >Code</a>
+        {{ end }}
+    </div>
+  </div>
+</div>
+    
+<!-- Simple List of projects -->
+<!-- 
+<div class="section">
+    <h5><a class="black-text" href="{{ .Permalink }}">{{ .Title }}</a></h5> 
+    <b><a class="black-text" href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></b>
+    <br>{{ .Date.Format "Mon, Jan 2, 2006" }}
+    <blockquote>{{ .Summary }}</blockquote>
+    <a href="{{ .Permalink }}" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
+</div>
+<div class="divider"></div>
+-->
+
+
+{{ end }}
+{{ end }}
+</div>
+{{ partial "footer.html" . }}

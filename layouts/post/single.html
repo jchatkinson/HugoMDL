@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<div>
+    <h1>{{ title .Title }}</h1>
+    {{ if .Params.subtitle }}
+    <h4 class="italic grey-text text-darken-2 ">{{ .Params.subtitle }}</h4>
+    {{ end }}
+    <p class="grey-text text-darken-2" >{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+    <p>{{ .Content }}</p>
+</div>   
+
+
+<div class="section">
+    <b><a class="black-text" href={{ .Params.author.website }}>{{ .Params.author.name }}</a></b>
+    <p class="italic grey-text text-darken-3">{{ .Params.author.description }}</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+{{ partial "socialshare.html" . }}
+</div>
+<div class="divider"></div>
+
+{{ partial "footer.html" . }}

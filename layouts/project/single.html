@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+<div>
+    <h1>{{ .Title }}</h1>
+<!--    <h5>{{ .Date.Format "Mon, Jan 2, 2006" }}</h5>-->
+    <h5 class="grey-text text-darken-2">{{ .Description }}</h5>
+    {{ if .Params.repolink }}
+    <div class="grey-text text-darken-1">Repository: <a href="{{ .Params.repolink }}">{{ .Params.repolink }}</a></div>
+    {{ end }}
+    {{ if .Params.weblink }}
+    <div class="grey-text text-darken-1">Website: <a href="{{ .Params.weblink }}">{{ .Params.weblink }}</a></div>    
+    {{ end }}
+    <div class="divider"></div>
+    {{ .Content }}
+</div>   
+
+<div class="divider"></div>
+
+<div class="section">
+    {{ partial "socialshare.html" . }}
+</div>
+
+<div class="divider"></div>
+
+{{ partial "footer.html" . }}
