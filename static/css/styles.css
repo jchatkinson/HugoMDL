@@ -316,7 +316,7 @@ body .demo-blog {
 .demo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('images/avatar.png');
+  background-image: url('/images/avatar.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;

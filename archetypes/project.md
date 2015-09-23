@@ -1,20 +1,22 @@
-+++ 
-title = "My Project Title" 
-Description = "Description of the sample project" 
-Tags = ["Project"] 
-Categories = ["Project"] 
-CardImage = "https://unsplash.it/200/300/?blur" 
-repolink = "http://github.com/sampleproject" 
-weblink = "http://github.com/sampleproject"
-
-[Author] 
-    name = "Jeremy Atkinson" 
-    description = "A guy that sometimes writes things" 
-    email = "jeremy@jatkinson.me" 
-    github = "https://github.com/jchatkinson/" 
-    twitter = "Jeremy_Atkinson" 
-    website = "http://jatkinson.me/bio/"
-
-+++
+---
+title: "My Project Title"
+description: "Description of the sample project"
+date: "2015-08-18"
+categories:
+    - "project"
+tags:
+    - "meta"
+    - "project"
+cardimage: "https://unsplash.it/200/300/?blur" 
+repo: "http://github.com/sampleproject" 
+web: "http://github.com/sampleproject"
+"author":
+    name: "First Last"
+    description: "Writer of stuff"
+    website: "http://example.com/bio/"
+    email: "jeremy@example.com"
+    twitter: "@example"
+    github: "https://github.com/example/"
+---
 
 proj·ect noun ˈpräjˌekt/ 1. an individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim. "a research project"

@@ -1,15 +1,17 @@
-+++ 
-title = "New Post" 
-subtitle = "" 
-Description = "" 
-Tags = [] 
-Categories = [] 
-[Author] 
-    name = "Firstname Lastname" 
-    description = "A guy that sometimes writes things" 
-    email = "jeremy@jatkinson.me" 
-    github = "https://github.com/jchatkinson/" 
-    twitter = "Jeremy_Atkinson" 
-    website = "http://jatkinson.me/bio/"
-
-+++
+---
+title: "First"
+description: "first post with Hugo website engine"
+date: "2015-08-18"
+categories:
+    - "post"
+tags:
+    - "meta"
+    - "test"
+"author":
+    name: "First Last"
+    description: "Writer of stuff"
+    website: "http://example.com/bio/"
+    email: "jeremy@example.com"
+    twitter: "@example"
+    github: "https://github.com/example/"
+---

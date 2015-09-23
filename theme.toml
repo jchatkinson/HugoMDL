@@ -1,7 +1,7 @@
 # theme.toml for Hugo-MDL
 # See http://jatkinson.me for an example
 
-name = "Hugo-MDL"
+name = "HugoMDL"
 license = "Apache 2.0"
 licenselink = "https://github.com/jchatkinson/hugo-materialized/blob/master/LICENSE.md"
 description = "a simple theme to show your bio, blog, and projects - based on Google's Material Design Lite library"
