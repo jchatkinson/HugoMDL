@@ -7,6 +7,8 @@ categories:
 tags:
     - "meta"
     - "test"
+cardimagelg: "/images/coffee.jpg"
+cardimagesm: "/images/coffee.jpg"
 "author":
     name: "First Last"
     description: "Writer of stuff"

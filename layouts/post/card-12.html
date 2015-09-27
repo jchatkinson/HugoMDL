@@ -1,0 +1,24 @@
+<!-- Make a card view for posts -->
+<div class="mdl-card mdl-cell mdl-cell--12-col">
+
+    <!-- card title -->
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ .Params.cardimagelg }}');">
+        <h3><a href="{{ .Permalink }}">{{ title .Title }}</a></h3>
+    </div>
+
+    <!-- Snippet of post -->
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        {{ .Summary }}
+    </div>
+
+    <!-- Author and Date -->
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <!-- author's profile pic -->
+        <div class="minilogo"></div> 
+        <div>
+            <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        </div>
+    </div>
+
+</div>

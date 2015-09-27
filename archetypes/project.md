@@ -19,4 +19,6 @@ web: "http://github.com/sampleproject"
     github: "https://github.com/example/"
 ---
 
-proj·ect noun ˈpräjˌekt/ 1. an individual or collaborative enterprise that is carefully planned and designed to achieve a particular aim. "a research project"
+
+
+

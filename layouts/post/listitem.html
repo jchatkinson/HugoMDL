@@ -1,0 +1,13 @@
+<!-- Styling for a single list item -->
+<div class="mdl-card__list-item mdl-color-text--grey-600">
+    <!-- author block -->
+    <div class="meta">
+        <div class="minilogo"></div>
+        <div>
+            <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        </div>
+    </div>
+    <!-- post title w/ link -->
+    <a href="{{ .Permalink }}"><h5 class="mdl-color-text--grey-600">{{ title .Title }}</h5></a>
+</div>

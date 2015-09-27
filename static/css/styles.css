@@ -12,11 +12,11 @@ body::before {
     position: fixed;
 }
 
-body .demo-blog {
+body .hugo-blog {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
-.demo-blog .demo-blog__posts {
+.hugo-blog .hugo-blog__posts {
   max-width: 900px;
   padding: 0;
   display: flex;
@@ -24,23 +24,53 @@ body .demo-blog {
   margin: 0 auto;
   flex-shrink: 0;
 }
+.hugo-blog .hugo-blog__list {
+  max-width: 900px;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.hugo-blog .hugo-blog__list .mdl-list__divider {
+  border-bottom: 1px solid #dcdcdc;
+}
+.hugo-blog .hugo-blog__list .mdl-card .mdl-card__list {
+  
+}
+.hugo-blog .hugo-blog__list .mdl-card .mdl-card__list-item {
+  display: flex;
+  font-size: 13px;
+  line-height: 18px;
+  box-sizing: border-box;
+  min-height: 48px;
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+.hugo-blog .hugo-blog__list .mdl-card .mdl-card__list-item a {
+  text-decoration: none;
+}
+.hugo-blog .hugo-blog__list .mdl-card .mdl-card__list-item a:hover {
+  text-decoration: underline;
+}
 
-.demo-blog.mdl-layout .mdl-layout__content {
-  padding-top: 230px;
+.hugo-blog.mdl-layout .mdl-layout__content {
+  padding-top: 160px;
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
-.demo-blog .mdl-card {
+.hugo-blog .mdl-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   min-height: 360px;
 }
-.demo-blog .mdl-card__title {
+.hugo-blog .mdl-card__title {
   padding: 16px;
   flex-grow: 1;
 }
-.demo-blog .mdl-card__media {
+.hugo-blog .mdl-card__media {
   box-sizing: border-box;
   background-size: cover;
   padding: 24px;
@@ -50,35 +80,35 @@ body .demo-blog {
   align-items: flex-end;
   cursor: pointer;
 }
-.demo-blog .mdl-card__media a,
-.demo-blog .mdl-card__title a {
+.hugo-blog .mdl-card__media a,
+.hugo-blog .mdl-card__title a {
   color: inherit;
 }
-.demo-blog .mdl-card__supporting-text {
+.hugo-blog .mdl-card__supporting-text {
   width: 100%;
   padding: 16px;
   min-height: 64px;
   display: flex;
   align-items: center;
 }
-.demo-blog .mdl-card__supporting-text strong {
+.hugo-blog .mdl-card__supporting-text strong {
   font-weight: 400;
 }
-.demo-blog .mdl-card__media ~ .mdl-card__supporting-text {
+.hugo-blog .mdl-card__media ~ .mdl-card__supporting-text {
   min-height: 64px;
 }
-.demo-blog .mdl-card__supporting-text:not(:last-child) {
+.hugo-blog .mdl-card__supporting-text:not(:last-child) {
   box-sizing: border-box;
   min-height: 76px;
 }
-.demo-blog:not(.demo-blog--blogpost) .mdl-card__supporting-text ~ .mdl-card__supporting-text {
+.hugo-blog:not(.hugo-blog--blogpost) .mdl-card__supporting-text ~ .mdl-card__supporting-text {
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.demo-blog .mdl-card__actions:first-child {
+.hugo-blog .mdl-card__actions:first-child {
   margin-left: 0;
 }
-.demo-blog .meta {
+.hugo-blog .meta {
   box-sizing: border-box;
   padding: 16px;
   display: flex;
@@ -87,71 +117,65 @@ body .demo-blog {
   justify-content: flex-start;
   height: auto;
 }
-.demo-blog .meta > .meta__favorites{
+.hugo-blog .meta > .meta__favorites{
   flex-direction: row;
   margin: 0 8px;
   font-size: 13px;
   font-weight: 500;
 }
-.demo-blog .meta > .meta__favorites .material-icons {
+.hugo-blog .meta > .meta__favorites .material-icons {
   font-size: 2em;
   cursor: pointer;
   margin-left: 12px;
 }
-.demo-blog .mdl-card .meta.meta--fill {
+.hugo-blog .mdl-card .meta.meta--fill {
   justify-content: space-between;
 }
-.demo-blog .meta > *:first-child {
+.hugo-blog .meta > *:first-child {
   margin-right: 16px;
 }
-.demo-blog .meta > * {
+.hugo-blog .meta > * {
   display: flex;
   flex-direction: column;
 }
-.demo-blog.is-small-screen .demo-blog__posts > .mdl-card.coffee-pic {
+.hugo-blog.is-small-screen .hugo-blog__posts > .mdl-card.coffee-pic {
   order: 0;
 }
-.demo-blog.is-small-screen .demo-blog__posts > .mdl-card.something-else {
+.hugo-blog.is-small-screen .hugo-blog__posts > .mdl-card.something-else {
   order: -1;
 }
-.demo-blog .coffee-pic .mdl-card__media {
+.hugo-blog .coffee-pic .mdl-card__media {
   background-image: url('images/coffee.jpg');
 }
-.demo-blog .something-else .mdl-card__media {
+.hugo-blog .something-else .mdl-card__media {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.demo-blog .something-else > button {
+.hugo-blog .something-else > button {
   position: absolute;
   top: 0;
   right: 28px;
   transform: translate(0px, -28px);
 }
-.demo-blog .something-else .mdl-card__media {
+.hugo-blog .something-else .mdl-card__media {
   font-size: 13px;
   font-weight: 500;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
-.demo-blog .something-else .mdl-card__media img {
+.hugo-blog .something-else .mdl-card__media img {
   width: 64px;
   height: 64px;
   margin-bottom: 10px;
 }
-.demo-blog .something-else .mdl-card__supporting-text {
+.hugo-blog .something-else .mdl-card__supporting-text {
   background-color: #F5F5F5;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-.demo-blog .on-the-road-again .mdl-card__media {
-  background-image: url('images/road.jpg');
-}
-.demo-blog .shopping .mdl-card__media {
-  background-image: url('images/shopping.jpg');
-}
-.demo-blog .demo-blog__posts > .demo-nav {
+.hugo-blog .hugo-blog__posts > .hugo-nav {
   margin: 12px 15px;
   display: flex;
   flex-direction: row;
@@ -160,68 +184,68 @@ body .demo-blog {
   color: white;
   font-weight: 500;
 }
-.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button {
+.hugo-blog .hugo-blog__posts > .hugo-nav > .hugo-nav__button {
   color: white;
   text-decoration: none;
 }
-.demo-blog .demo-blog__posts > .demo-nav .mdl-button {
+.hugo-blog .hugo-blog__posts > .hugo-nav .mdl-button {
   color: rgba(0,0,0,0.54);
   background-color: white;
 }
-.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button:first-child .mdl-button {
+.hugo-blog .hugo-blog__posts > .hugo-nav > .hugo-nav__button:first-child .mdl-button {
   margin-right: 16px;
 }
-.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button:last-child .mdl-button {
+.hugo-blog .hugo-blog__posts > .hugo-nav > .hugo-nav__button:last-child .mdl-button {
   margin-left: 16px;
 }
-.demo-blog .mdl-card > a {
+.hugo-blog .mdl-card > a {
   color: inherit;
   text-decoration: none;
   font-weight: inherit;
 }
-.demo-blog .mdl-card h3 {
+.hugo-blog .mdl-card h3 {
   margin: 0;
 }
-.demo-blog .mdl-card h3 a {
+.hugo-blog .mdl-card h3 a {
   text-decoration: none;
 }
-.demo-blog .mdl-card h3.quote:before, .demo-blog .mdl-card h3.quote:after {
+.hugo-blog .mdl-card h3.quote:before, .hugo-blog .mdl-card h3.quote:after {
   display: block;
   font-size: 3em;
   margin-top: 0.5em;
 }
-.demo-blog .mdl-card h3.quote:before {
+.hugo-blog .mdl-card h3.quote:before {
   content: '“';
 }
-.demo-blog .mdl-card h3.quote:after {
+.hugo-blog .mdl-card h3.quote:after {
   content: '”';
 }
-.demo-blog--blogpost .custom-header {
+.hugo-blog--blogpost .custom-header {
   background-color: transparent;
 }
-.demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media {
-  background-image: url('images/road_big.jpg');
+.hugo-blog--blogpost .hugo-blog__posts > .mdl-card .mdl-card__media {
+  /*background-image: url('images/road_big.jpg');*/
   height: 280px;
 }
-.demo-blog--blogpost .comments {
+.hugo-blog--blogpost .comments {
   background-color: #EEE;
 }
-.demo-blog--blogpost .meta > * {
+.hugo-blog--blogpost .meta > * {
   align-items: center;
 }
-.demo-blog--blogpost .meta + .mdl-card__supporting-text {
+.hugo-blog--blogpost .meta + .mdl-card__supporting-text {
   border: 0;
   display: flex;
   flex-direction: column;
 }
-.demo-blog--blogpost .meta + .mdl-card__supporting-text p {
-  max-width: 512px;
+.hugo-blog--blogpost .meta + .mdl-card__supporting-text p {
+  max-width: 700px;
   margin: 16px auto;
   font-size: 16px;
   line-height: 28px;
 }
 
-.demo-blog--blogpost .comments {
+.hugo-blog--blogpost .comments {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -229,12 +253,12 @@ body .demo-blog {
   padding: 32px;
   box-sizing: border-box;
 }
-.demo-blog--blogpost .comments > form {
+.hugo-blog--blogpost .comments > form {
   display: flex;
   flex-diretion: row;
   margin-bottom: 16px;
 }
-.demo-blog--blogpost .comments > form .mdl-textfield {
+.hugo-blog--blogpost .comments > form .mdl-textfield {
   flex-grow: 1;
   margin-right: 16px;
   color: rgb(97, 97, 97);
@@ -242,44 +266,44 @@ body .demo-blog {
 /* Workaround for Firefox.
  * User agent stylesheet kept overwriting the font in FF only.
  */
-.demo-blog--blogpost .comments > form .mdl-textfield .mdl-textfield__input {
+.hugo-blog--blogpost .comments > form .mdl-textfield .mdl-textfield__input {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
-.demo-blog--blogpost .comments > form .mdl-textfield input,
-.demo-blog--blogpost .comments > form .mdl-textfield textarea {
+.hugo-blog--blogpost .comments > form .mdl-textfield input,
+.hugo-blog--blogpost .comments > form .mdl-textfield textarea {
   resize: none;
 }
-.demo-blog--blogpost .comments > form button {
+.hugo-blog--blogpost .comments > form button {
   margin-top: 20px;
   background-color: rgba(0, 0, 0, 0.24);
   color: white;
 }
-.demo-blog--blogpost .comments .comment {
+.hugo-blog--blogpost .comments .comment {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
-.demo-blog--blogpost .comments .comment > .comment__header {
+.hugo-blog--blogpost .comments .comment > .comment__header {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
 }
-.demo-blog--blogpost .comments .comment > .comment__header > .comment__avatar {
+.hugo-blog--blogpost .comments .comment > .comment__header > .comment__avatar {
   width: 48px;
   height: 48px;
   border-radius: 24px;
   margin-right: 16px;
 }
-.demo-blog--blogpost .comments .comment > .comment__header > .comment__author {
+.hugo-blog--blogpost .comments .comment > .comment__header > .comment__author {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.demo-blog--blogpost .comments .comment > .comment__text {
+.hugo-blog--blogpost .comments .comment > .comment__text {
   line-height: 1.5em;
 }
-.demo-blog--blogpost .comments .comment > .comment__actions {
+.hugo-blog--blogpost .comments .comment > .comment__actions {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -287,33 +311,33 @@ body .demo-blog {
   font-size: 0.8em;
   margin-top: 16px;
 }
-.demo-blog--blogpost .comments .comment > .comment__actions button {
+.hugo-blog--blogpost .comments .comment > .comment__actions button {
   margin-right: 16px;
   color: rgba(0, 0, 0, 0.24);
 }
-.demo-blog--blogpost .comments .comment > .comment__answers {
+.hugo-blog--blogpost .comments .comment > .comment__answers {
   padding-top: 32px;
   padding-left: 48px;
 }
 
-.demo-blog--blogpost .demo-back {
+.hugo-blog--blogpost .hugo-back {
   position: absolute;
   top: 16px;
   left: 16px;
   color: white;
   z-index: 9999;
 }
-.demo-blog .section-spacer {
+.hugo-blog .section-spacer {
   flex-grow: 1;
 }
-.demo-blog .something-else {
+.hugo-blog .something-else {
   overflow: visible;
   z-index: 10;
 }
-.demo-blog .amazing .mdl-card__title {
+.hugo-blog .amazing .mdl-card__title {
   background-color: #263238;
 }
-.demo-blog .minilogo {
+.hugo-blog .minilogo {
   width: 44px;
   height: 44px;
   background-image: url('/images/avatar.png');
@@ -341,25 +365,43 @@ body .demo-blog {
   opacity: 0.46;
   border-radius: 2px;
 }
-.social-btn__twitter {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_24dp.png');
-}
-.social-btn__blogger {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_black_24dp.png');
-}
-.social-btn__gplus {
-  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_24dp.png');
-}
 .social-btn__share {
   color: rgba(0, 0, 0, 0.54);
   background: transparent;
 }
+.fa-social {
+  color: rgba(0, 0, 0, 0.54);
+}
 
-.demo-blog .mdl-mini-footer {
+
+.hugo-blog .mdl-mini-footer {
   margin-top: 80px;
   height: 120px;
   padding: 40px;
   align-items: center;
   background-color: white;
   box-sizing: border-box;
+}
+
+.hugo-blog .pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 16px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.hugo-blog .pagination .page-nums {
+  padding-left: 8px;
+  padding-right: 8px;
+  text-decoration: none;
+}
+.hugo-blog .pagination .page-nums:hover {
+  text-decoration: underline;
+}
+.hugo-blog .pagination .active {
+  text-decoration: underline;
+}
+.hugo-blog .pagination .disabled {
+  color: rgba(0, 0, 0, 0.54);
 }

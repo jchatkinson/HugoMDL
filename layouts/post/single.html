@@ -1,16 +1,12 @@
-{{ partial "header.html" . }}
+{{ partial "header-post.html" . }}
 
-<div class="demo-back">
-  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
-    <i class="material-icons" role="presentation">arrow_back</i>
-  </a>
-</div>
+{{ partial "backarrow.html" .}}
 
-<div class="demo-blog__posts mdl-grid">
+<div class="hugo-blog__posts mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
-        <div class="mdl-card__media mdl-color-text--grey-50">
-            <h1>{{ title .Title }}</h1>
+        <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ .Params.cardimagelg }}');">
+            <h3>{{ title .Title }}</h3>
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
@@ -19,30 +15,24 @@
                 <strong>{{ .Params.author.name }}</strong>
                 <span>{{ .Date.Format "Jan 2, 2006" }}</span>
             </div>
+            
             <div class="section-spacer"></div>
-            <div class="meta__favorites">425
-                <i class="material-icons" role="presentation">favorite</i>
-                <span class="visuallyhidden">favorites</span>
-            </div>
-            <div>
-                <i class="material-icons" role="presentation">bookmark</i>
-                <span class="visuallyhidden">bookmark</span>
-            </div>
-            <div>
-                <i class="material-icons" role="presentation">share</i>
-                <span class="visuallyhidden">share</span>
-            </div>
+            
         </div>
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
             {{ .Content }}
         </div>
         
-        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
             <a class="black-text" href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
             <p class="italic grey-text text-darken-3">{{ .Params.author.description }}</p>
         </div>  
     </div>
+
+    {{ partial "prevnextbtns.html" . }} 
+
+
 </div>
 
 {{ partial "footer.html" . }}
