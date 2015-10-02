@@ -1,6 +1,5 @@
 <!-- List of posts -->
 {{ partial "header-post.html" . }}  
-{{ partial "backarrow.html" . }} 
 
 <div class="hugo-blog__list mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
@@ -11,8 +10,7 @@
 
         <!-- list of posts -->
         {{ template "theme/partials/pagination.html" . }} {{ range .Paginator.Pages }} {{ .Render "listitem" }} {{ end }}
-
-        <!-- Button to show prev/next page of posts -->
+        {{ partial "pagination.html" . }}
     </div>
 </div>
 

@@ -12,6 +12,7 @@ tags:
 blurb: "I am a guy trying to make a hugo template work"
 recentposts: 5
 recentprojects: 5
+photo: "/images/avatar.png"
 ---
 
 #### Education

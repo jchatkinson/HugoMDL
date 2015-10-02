@@ -104,7 +104,12 @@ body .hugo-blog {
 .hugo-blog:not(.hugo-blog--blogpost) .mdl-card__supporting-text ~ .mdl-card__supporting-text {
   border-top: 1px solid rgba(0,0,0,0.1);
 }
-
+.hugo-blog .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+  justify-content: space-between;
+}
 .hugo-blog .mdl-card__actions:first-child {
   margin-left: 0;
 }
@@ -123,10 +128,17 @@ body .hugo-blog {
   font-size: 13px;
   font-weight: 500;
 }
-.hugo-blog .meta > .meta__favorites .material-icons {
-  font-size: 2em;
-  cursor: pointer;
-  margin-left: 12px;
+.hugo-blog .material-icons {
+  font-size: 1em;
+  cursor: hand;
+}
+.hugo-blog .material-icons_lg {
+  font-size: 1.33em;
+  cursor: hand;
+}
+.hugo-blog .material-icons_2x {
+  font-size: 2.0em;
+  cursor: hand;
 }
 .hugo-blog .mdl-card .meta.meta--fill {
   justify-content: space-between;
@@ -138,39 +150,29 @@ body .hugo-blog {
   display: flex;
   flex-direction: column;
 }
-.hugo-blog.is-small-screen .hugo-blog__posts > .mdl-card.coffee-pic {
-  order: 0;
-}
-.hugo-blog.is-small-screen .hugo-blog__posts > .mdl-card.something-else {
-  order: -1;
-}
-.hugo-blog .coffee-pic .mdl-card__media {
-  background-image: url('images/coffee.jpg');
-}
-.hugo-blog .something-else .mdl-card__media {
+.hugo-blog .profile-card .mdl-card__media {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.hugo-blog .something-else > button {
+.hugo-blog .profile-card #fab_ctn {
   position: absolute;
-  top: 0;
-  right: 28px;
+  top: 296px;
+  right: 16px;
   transform: translate(0px, -28px);
 }
-.hugo-blog .something-else .mdl-card__media {
+.hugo-blog .profile-card .mdl-card__media {
   font-size: 13px;
   font-weight: 500;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
-.hugo-blog .something-else .mdl-card__media img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 10px;
+.hugo-blog .profile-card .mdl-card__media img {
+  max-width: 100%;
+  max-height: 100%;
 }
-.hugo-blog .something-else .mdl-card__supporting-text {
+.hugo-blog .profile-card .mdl-card__supporting-text {
   background-color: #F5F5F5;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -224,7 +226,7 @@ body .hugo-blog {
   background-color: transparent;
 }
 .hugo-blog--blogpost .hugo-blog__posts > .mdl-card .mdl-card__media {
-  /*background-image: url('images/road_big.jpg');*/
+  background-image: url('/images/md-bg.jpg');
   height: 280px;
 }
 .hugo-blog--blogpost .comments {
@@ -330,7 +332,7 @@ body .hugo-blog {
 .hugo-blog .section-spacer {
   flex-grow: 1;
 }
-.hugo-blog .something-else {
+.hugo-blog .profile-card {
   overflow: visible;
   z-index: 10;
 }
@@ -359,20 +361,16 @@ body .hugo-blog {
   background-repeat: no-repeat;
   background-color: transparent;
   margin: 0 16px;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
   opacity: 0.46;
   border-radius: 2px;
+  font-size: 1.5em;
+  color: rgba(138, 138, 138, 1);
 }
 .social-btn__share {
   color: rgba(0, 0, 0, 0.54);
   background: transparent;
 }
-.fa-social {
-  color: rgba(0, 0, 0, 0.54);
-}
-
 
 .hugo-blog .mdl-mini-footer {
   margin-top: 80px;
@@ -387,10 +385,10 @@ body .hugo-blog {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 16px;
+  align-items: center;
+  padding: 8px;
   border-bottom: 1px solid #dcdcdc;
 }
-
 .hugo-blog .pagination .page-nums {
   padding-left: 8px;
   padding-right: 8px;
@@ -404,4 +402,94 @@ body .hugo-blog {
 }
 .hugo-blog .pagination .disabled {
   color: rgba(0, 0, 0, 0.54);
+}
+.mdl-button--fab_flinger-container {
+  position: fixed;
+  bottom: 90px;
+  right: 90px;
+}
+.mdl-button--fab_flinger-container.is-showing-options > button i {
+  transition: transform 0.1s linear;
+  transform: translate(-12px, -12px) rotate(45deg);
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button {
+  display: block;
+  animation-name: enter;
+  animation-fill-mode: forwards;
+  animation-duration: 0.1s;
+  transform-origin: bottom center;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(5) {
+  animation-delay: 0.5s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options button {
+  transform: scale(0);
+  display: none;
+}
+@keyframes enter {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+.hugo-blog .about .about-media {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px;
+}
+.hugo-blog .about .profile-pic-container {
+  transform: translate(0px, 75px);
+}
+.hugo-blog .about .profile-pic-container .profilepic {
+  width: 150px;
+  height: 150px;
+  background-image: url('/images/avatar.png');
+  background-position: 50% calc(50% + 10px);
+  background-repeat: no-repeat;
+  background-size: 95%;
+  border-radius: 50%;
+  /*background-color: #F5F5F5;*/
+    background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #789296;
+  border-width: 3px;
+  
+}
+.hugo-blog .about .about-text {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 110px;
+}
+.hugo-blog .mdl-layout__header,
+.hugo-blog .mdl-layout__drawer-button,
+.hugo-blog .mdl-layout__header--transparent .mdl-navigation__link{
+  color: white;
 }

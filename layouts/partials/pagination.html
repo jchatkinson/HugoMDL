@@ -4,9 +4,9 @@
 
     <div class="pagination">
         
-        <a href="{{ with $pag.First }}{{ .URL }}{{ end }}" aria-label="First"><span aria-hidden="true" title="first" role="button"><i class="fa fa-angle-double-left fa-lg" ></i></span></a>
+        <a href="{{ with $pag.First }}{{ .URL }}{{ end }}" aria-label="First"><span aria-hidden="true" title="first" role="button"><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i></span></a>
         
-        <a {{ if not $pag.HasPrev }}class="disabled"{{ end }} href="{{ if $pag.HasPrev }}{{ $pag.Prev.Url }}{{ end }}" aria-label="Previous" title="previous" role="button"><span aria-hidden="true"><i class="fa fa-angle-left fa-lg"></i></span></a>
+        <a {{ if not $pag.HasPrev }}class="disabled"{{ end }} href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" aria-label="Previous" title="previous" role="button"><span aria-hidden="true"><i class="material-icons_2x icon ion-android-arrow-dropleft"></i></span></a>
         
         <div>
             {{ range $pag.Pagers }}
@@ -14,9 +14,9 @@
             {{ end }}
         </div>
         
-        <a {{ if not $pag.HasNext }}class="disabled"{{ end }} href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true" title="next" role="button"><i class="fa fa-angle-right fa-lg"></i></span></a>
+        <a {{ if not $pag.HasNext }}class="disabled"{{ end }} href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true" title="next" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
         
-        <a href="{{ with $pag.Last }}{{ .URL }}{{ end }}" aria-label="Last"><span aria-hidden="true" title="last" role="button"><i class="fa fa-angle-double-right fa-lg" ></i></span></a>
+        <a href="{{ with $pag.Last }}{{ .URL }}{{ end }}" aria-label="Last"><span aria-hidden="true" title="last" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
         
     </div>
     

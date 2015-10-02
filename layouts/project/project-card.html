@@ -1,0 +1,22 @@
+<!-- Make a card view for posts -->
+<div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+
+    <!-- card title -->
+    <div class="mdl-card__media" style="background-image: url('{{ .Params.cardimage }}');">
+        <a href="{{ .RelPermalink }}"></a>
+    </div>
+    <!-- Project description (from frontmatter) -->
+    <div class="mdl-card__supporting-text">
+        <h5>{{ title .Title }}</h5>
+    </div>
+    <!-- More link and project links -->
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .RelPermalink }}">Details</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .Params.repo }}">Repo</a>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .Params.web }}">Site</a>
+        <!--<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/">-->
+        <!--    <i class="material-icons_lg icon ion-social-github"></i>-->
+        <!--    <span class="visuallyhidden">Github</span>-->
+        <!--</a>-->
+    </div>
+</div>

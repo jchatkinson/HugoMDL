@@ -1,0 +1,46 @@
+    <!-- Transparent Header and Menu Buttons -->
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">{{ title .Title }}</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+                {{ if .IsNode }}   
+                    {{ if eq (relURL .URL) ("/" | safeHTML) }}<!--remove home link from homepage -->{{ else }}<a class="mdl-navigation__link" href="/">Home</a>{{ end }}
+                    {{ if eq (relURL .URL) ("/post/" | safeHTML) }}<!--remove post link from post list -->{{ else }}<a class="mdl-navigation__link" href="/post">Articles</a>{{ end }}
+                    {{ if eq (relURL .URL) ("/project/" | safeHTML) }}<!--remove project link from project list -->{{ else }}<a class="mdl-navigation__link" href="/project">Projects</a>{{ end }}
+                    <a class="mdl-navigation__link" href="/about">About</a>
+                {{else}}  
+                    <a class="mdl-navigation__link" href="/">Home</a>
+                    <a class="mdl-navigation__link" href="/post">Articles</a>
+                    <a class="mdl-navigation__link" href="/project">Projects</a>
+                    {{ if eq .RelPermalink ("/about/" | safeHTML) }}{{ else }} <a class="mdl-navigation__link" href="/about">About</a>{{end}}
+                {{end}}
+                
+            </nav>
+        </div>
+    </header>
+    
+    
+    <div class="mdl-layout__drawer">
+        
+        <span class="mdl-layout-title">{{ title .Title }}</span>
+        
+        <nav class="mdl-navigation">
+        
+                {{ if .IsNode }}   
+                    {{ if eq (relURL .URL) ("/" | safeHTML) }}<!--remove home link from homepage -->{{ else }}<a class="mdl-navigation__link" href="/">Home</a>{{ end }}
+                    {{ if eq (relURL .URL) ("/post/" | safeHTML) }}<!--remove post link from post list -->{{ else }}<a class="mdl-navigation__link" href="/post">Articles</a>{{ end }}
+                    {{ if eq (relURL .URL) ("/project/" | safeHTML) }}<!--remove project link from project list -->{{ else }}<a class="mdl-navigation__link" href="/project">Projects</a>{{ end }}
+                    <a class="mdl-navigation__link" href="/about">About</a>
+                {{else}}  
+                    <a class="mdl-navigation__link" href="/">Home</a>
+                    <a class="mdl-navigation__link" href="/post">Articles</a>
+                    <a class="mdl-navigation__link" href="/project">Projects</a>
+                    {{ if eq .RelPermalink ("/about/" | safeHTML) }}{{ else }} <a class="mdl-navigation__link" href="/about">About</a>{{end}}
+                {{end}}
+            
+        </nav>
+    </div>

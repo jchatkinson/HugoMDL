@@ -1,0 +1,46 @@
+{{ partial "header-post.html" . }}
+
+<div class="hugo-blog__posts mdl-grid about">
+  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <div class="mdl-card__media about-media" style="background-image: url('{{ .Params.background }}');">
+      <div class="profile-pic-container">
+        <div class="profilepic"></div>
+      </div>
+    </div>
+
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text about-text">
+      <h3>{{ .Site.Params.name }}</h3>
+      <h6>{{ .Params.blurb }}</h6>
+      <div>
+      {{ if .Content }}{{ .Content }}{{ end }}
+      
+          <!-- lsit some recent projects -->
+          {{ if .Params.recentprojects }}
+          <div class="list">
+            <h4>Recent Projects</h4>
+            <ul>
+              {{range first .Params.recentprojects (where .Site.Pages "Section" "project")}}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }} 
+          
+          <!-- list some recent posts-->
+          {{ if .Params.recentposts }}
+          <div class="list">
+            <h4>Recent Posts</h4>
+            <ul>
+              {{ range first .Params.recentposts (where .Site.Pages "Section" "post") }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+      </div> 
+    </div>
+
+  </div>
+</div>
+{{ partial "footer.html" . }}

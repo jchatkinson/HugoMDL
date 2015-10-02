@@ -1,25 +1,29 @@
 {{ partial "header-post.html" . }}
 
-<div>
-    <h1>{{ .Title }}</h1>
-<!--    <h5>{{ .Date.Format "Mon, Jan 2, 2006" }}</h5>-->
-    <h5 class="grey-text text-darken-2">{{ .Description }}</h5>
-    {{ if .Params.repolink }}
-    <div class="grey-text text-darken-1">Repository: <a href="{{ .Params.repolink }}">{{ .Params.repolink }}</a></div>
-    {{ end }}
-    {{ if .Params.weblink }}
-    <div class="grey-text text-darken-1">Website: <a href="{{ .Params.weblink }}">{{ .Params.weblink }}</a></div>    
-    {{ end }}
-    <div class="divider"></div>
-    {{ .Content }}
-</div>   
-
-<div class="divider"></div>
-
-<div class="section">
-    {{ partial "socialshare.html" . }}
+<div class="hugo-blog__posts mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ .Params.cardimage }}');">
+            <h3>{{ title .Title }}</h3>
+        </div>
+        
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+            <div class="minilogo"></div>
+            <div>
+                <strong>{{ .Params.author.name }}</strong>
+                <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            </div>
+            <div class="section-spacer"></div>
+        </div>
+            
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+            {{ .Content }}
+        </div>
+        
+        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
+            <a class="black-text" href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
+            <p class="italic grey-text text-darken-3">{{ .Params.author.description }}</p>
+        </div>  
+    </div>
+    {{ partial "prevnextbtns.html" . }} 
 </div>
-
-<div class="divider"></div>
-
-{{ partial "footer.html" . }}
+{{ partial "footer-project.html" . }}
