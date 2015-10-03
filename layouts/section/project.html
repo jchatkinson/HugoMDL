@@ -1,14 +1,9 @@
 {{ partial "header-project.html" . }} 
 
 <div class="hugo-blog__list mdl-grid">
-  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-    <!-- List heading -->
-    <div class="mdl-card__media mdl-color-text--grey-50">
-      <h3>My Projects:</h3>
-    </div>
-    {{ range .Data.Pages }} {{ if eq .Type "project" }}
-    <!-- Responsive Cards for each project -->
-    {{ .Render "project-card" }} {{ end }} {{ end }}
-  </div>
+    {{ range .Data.Pages }} 
+      <!-- Responsive Cards for each project -->
+      {{ if eq .Type "project" }}{{ .Render "project-card" }} {{ end }} 
+    {{ end }}
 </div>
 {{ partial "footer.html" . }}

@@ -1,22 +1,14 @@
-<!-- Make a card view for posts -->
-<div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-
+<!-- Make a card view for projects -->
+<div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp project-card">
     <!-- card title -->
-    <div class="mdl-card__media" style="background-image: url('{{ .Params.cardimage }}');">
-        <a href="{{ .RelPermalink }}"></a>
-    </div>
-    <!-- Project description (from frontmatter) -->
-    <div class="mdl-card__supporting-text">
-        <h5>{{ title .Title }}</h5>
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background: url('{{ .Params.cardimage }}') center / cover;">
+        <h3><a href="{{ .RelPermalink }}">{{ title .Title }}</a></h3>
     </div>
     <!-- More link and project links -->
     <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .RelPermalink }}">Details</a>
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .Params.repo }}">Repo</a>
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .Params.web }}">Site</a>
-        <!--<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/">-->
-        <!--    <i class="material-icons_lg icon ion-social-github"></i>-->
-        <!--    <span class="visuallyhidden">Github</span>-->
-        <!--</a>-->
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .RelPermalink }}">More Info</a>
+        <div class="mdl-layout-spacer"></div>
+        {{ if .Params.repo }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{ .Params.repo }}"><i class="material-icons_2x icon ion-social-github"></i></a>{{ end }}
+        {{ if .Params.web }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{ .Params.web }}"><i class="material-icons_2x icon ion-link"></i></a>{{ end }}
     </div>
 </div>
