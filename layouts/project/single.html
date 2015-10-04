@@ -1,13 +1,13 @@
-{{ partial "header-post.html" . }}
+{{ partial "header.html" . }}
 
 <div class="hugo-blog__posts mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ .Params.cardimage }}');">
+        <div class="mdl-card__media mdl-color-text--grey-50" {{with .Params.headerimage}}style="background-image: url('{{.}}');"{{end}}>
             <h3>{{ title .Title }}</h3>
         </div>
         
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-            <div class="minilogo"></div>
+            <div class="minilogo" {{with .Params.author.image}}style="background-image: url('{{.}}');"{{end}}></div>
             <div>
                 <strong>{{ .Params.author.name }}</strong>
                 <span>{{ .Date.Format "Jan 2, 2006" }}</span>

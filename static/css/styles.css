@@ -230,9 +230,9 @@ body .hugo-blog {
 .hugo-blog--blogpost .comments {
   background-color: #EEE;
 }
-.hugo-blog--blogpost .meta > * {
-  align-items: center;
-}
+/*.hugo-blog--blogpost .meta > * {*/
+/*  align-items: center;*/
+/*}*/
 .hugo-blog--blogpost .meta + .mdl-card__supporting-text {
   border: 0;
   display: flex;
@@ -403,8 +403,8 @@ body .hugo-blog {
   right: 90px;
 }
 .mdl-button--fab_flinger-container.is-showing-options > button i {
-  transition: transform 0.1s linear;
-  transform: translate(-12px, -12px) rotate(45deg);
+  transition: transform 0.3s linear;
+  transform: rotate(45deg);
 }
 .mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options {
   display: flex;
@@ -489,8 +489,16 @@ body .hugo-blog {
 .hugo-blog .mdl-layout__header--transparent .mdl-navigation__link.active,
 .hugo-blog .mdl-layout__drawer .mdl-navigation__link.active {
   color: rgb(255,171,64);
-  font-weight: bold;
+}
+.hugo-blog .mdl-layout__header--transparent .mdl-navigation__link:hover {
+  color: rgb(255,171,64);
+  
 }
 .hugo-blog .project-card {
   min-height: 275px;
+}
+.hugo-blog .project-card .project-title a {
+  font-size: 1.2em;
+  line-height: 20px;
+  text-decoration: none;
 }

@@ -3,14 +3,14 @@
 
 name = "HugoMDL"
 license = "Apache 2.0"
-licenselink = "https://github.com/jchatkinson/hugo-materialized/blob/master/LICENSE.md"
-description = "a simple theme to show your bio, blog, and projects - based on Google's Material Design Lite library"
-homepage = "https://github.com/jchatkinson/Hugo-MDL/"
+licenselink = "https://github.com/jchatkinson/HugoMDL/blob/master/LICENSE.md"
+description = "a simple and responsive theme to show your bio, blog, and projects - based on Google's Material Design Lite library"
+homepage = "http://jatkinson.me"
 tags = ["blog", "projects","portfolio","Material Design Lite","MDL","Material Design"]
 features = ["blog", "project showcase", "portfolio", "profile","responsive","Material Design"]
 min_version = 0.13
 
 [author]
   name = "Jeremy Atkinson"
-  homepage = "jatkinson.me"
+  homepage = "http://jatkinson.me"
   email = "jeremy@jatkinson.me"

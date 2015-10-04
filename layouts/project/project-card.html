@@ -2,13 +2,13 @@
 <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp project-card">
     <!-- card title -->
     <div class="mdl-card__media mdl-color-text--grey-50" style="background: url('{{ .Params.cardimage }}') center / cover;">
-        <h3><a href="{{ .RelPermalink }}">{{ title .Title }}</a></h3>
+        <div class="project-title"><a href="{{ .RelPermalink }}" {{ with .Params.titlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></div>
     </div>
     <!-- More link and project links -->
     <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .RelPermalink }}">More Info</a>
         <div class="mdl-layout-spacer"></div>
-        {{ if .Params.repo }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{ .Params.repo }}"><i class="material-icons_2x icon ion-social-github"></i></a>{{ end }}
-        {{ if .Params.web }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{ .Params.web }}"><i class="material-icons_2x icon ion-link"></i></a>{{ end }}
+        {{ with .Params.repo }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}"><i class="material-icons_2x icon ion-social-github"></i></a>{{ end }}
+        {{ with .Params.web }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}"><i class="material-icons_2x icon ion-link"></i></a>{{ end }}
     </div>
 </div>
