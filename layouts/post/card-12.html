@@ -2,8 +2,8 @@
 <div class="mdl-card mdl-cell mdl-cell--12-col">
 
     <!-- card title -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{ .Params.cardimagelg }}');">
-        <h3><a href="{{ .RelPermalink }}">{{ title .Title }}</a></h3>
+    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+        <h3><a href="{{ .RelPermalink }}" {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></h3>
     </div>
 
     <!-- Snippet of post -->

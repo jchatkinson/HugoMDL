@@ -2,12 +2,12 @@
 
 <div class="hugo-blog__posts mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__media mdl-color-text--grey-50" {{with .Params.headerimage}}style="background-image: url('{{.}}');"{{end}}>
-            <h3>{{ title .Title }}</h3>
+        <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+            <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
         </div>
         
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-            <div class="minilogo" {{with .Params.author.image}}style="background-image: url('{{.}}');"{{end}}></div>
+            {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
             <div>
                 <strong>{{ .Params.author.name }}</strong>
                 <span>{{ .Date.Format "Jan 2, 2006" }}</span>
@@ -15,13 +15,13 @@
             <div class="section-spacer"></div>
         </div>
             
-        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text hugo-content">
             {{ .Content }}
         </div>
         
         <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
-            <a class="black-text" href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
-            <p class="italic grey-text text-darken-3">{{ .Params.author.description }}</p>
+            <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ .Params.author.name }}</a>
+            {{with .Params.author.description }}<p>{{.}}</p>{{end}}
         </div>  
     </div>
     {{ partial "prevnextbtns.html" . }} 

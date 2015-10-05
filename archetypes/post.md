@@ -7,8 +7,10 @@ categories:
 tags:
     - "meta"
     - "test"
-cardimagelg: "/images/coffee.jpg"
-cardimagesm: "/images/coffee.jpg"
+cardthumbimage: "/images/default.jpg" #optional: default solid color if unset
+cardheaderimage: "/images/default.jpg" #optional: default solid color if unset
+cardbackground: "#263238" #optional: card background color; only shows when no image specified
+#cardtitlecolor: "#fafafa" #optional: can be changed to make text visible over card image
 "author":
     name: "First Last"
     description: "Writer of stuff"

@@ -1,8 +1,10 @@
 ---
 title: "My Project Title"
 description: "Description of the sample project" #optional: curently displays as tooltip 
-cardimage: "/images/md-bg.jpg" #optional: default solid color if unset
-headerimage: "/images/md-bg.jpg" #optional: default solid color if unset
+cardthumbimage: "/images/default.jpg" #optional: default solid color if unset
+cardheaderimage: "/images/default.jpg" #optional: default solid color if unset
+cardbackground: "#263238" #optional: card background color; only shows when no image specified
+#cardtitlecolor: "#fafafa" #optional: can be changed to make text visible over card image
 repo: "http://github.com/" #optional: no icon appears if unset
 web: "http://github.com/" #optional: no icon appears if unset
 date: "2015-08-18"
@@ -19,7 +21,7 @@ tags:
     twitter: "example_twittername"
     github: "https://github.com/"
     image: "/images/avatar.png" 
-titlecolor: "#fafafa" #optional: can be changed to make text visible over card image
+
 ---
 
 

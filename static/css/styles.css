@@ -1,5 +1,5 @@
 body::before {
-    background-image: url('/images/bg.jpg');
+    background-image: url('/images/background.jpg');
     background-size: cover;
     background-attachment: fixed;
     content: '';
@@ -224,7 +224,7 @@ body .hugo-blog {
   background-color: transparent;
 }
 .hugo-blog--blogpost .hugo-blog__posts > .mdl-card .mdl-card__media {
-  background-image: url('/images/md-bg.jpg');
+  /*background-image: url('/images/default.jpg');*/
   height: 280px;
 }
 .hugo-blog--blogpost .comments {
@@ -244,7 +244,10 @@ body .hugo-blog {
   font-size: 16px;
   line-height: 28px;
 }
-
+.hugo-blog .hugo-content img {
+  max-width: 100%;
+  height: auto;
+}
 .hugo-blog--blogpost .comments {
   display: flex;
   flex-direction: column;
@@ -253,73 +256,6 @@ body .hugo-blog {
   padding: 32px;
   box-sizing: border-box;
 }
-.hugo-blog--blogpost .comments > form {
-  display: flex;
-  flex-diretion: row;
-  margin-bottom: 16px;
-}
-.hugo-blog--blogpost .comments > form .mdl-textfield {
-  flex-grow: 1;
-  margin-right: 16px;
-  color: rgb(97, 97, 97);
-}
-/* Workaround for Firefox.
- * User agent stylesheet kept overwriting the font in FF only.
- */
-.hugo-blog--blogpost .comments > form .mdl-textfield .mdl-textfield__input {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
-}
-.hugo-blog--blogpost .comments > form .mdl-textfield input,
-.hugo-blog--blogpost .comments > form .mdl-textfield textarea {
-  resize: none;
-}
-.hugo-blog--blogpost .comments > form button {
-  margin-top: 20px;
-  background-color: rgba(0, 0, 0, 0.24);
-  color: white;
-}
-.hugo-blog--blogpost .comments .comment {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-.hugo-blog--blogpost .comments .comment > .comment__header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.hugo-blog--blogpost .comments .comment > .comment__header > .comment__avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  margin-right: 16px;
-}
-.hugo-blog--blogpost .comments .comment > .comment__header > .comment__author {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-.hugo-blog--blogpost .comments .comment > .comment__text {
-  line-height: 1.5em;
-}
-.hugo-blog--blogpost .comments .comment > .comment__actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 0.8em;
-  margin-top: 16px;
-}
-.hugo-blog--blogpost .comments .comment > .comment__actions button {
-  margin-right: 16px;
-  color: rgba(0, 0, 0, 0.24);
-}
-.hugo-blog--blogpost .comments .comment > .comment__answers {
-  padding-top: 32px;
-  padding-left: 48px;
-}
-
 .hugo-blog--blogpost .hugo-back {
   position: absolute;
   top: 16px;
@@ -369,11 +305,16 @@ body .hugo-blog {
 }
 .hugo-blog .mdl-mini-footer {
   margin-top: 80px;
-  height: 120px;
-  padding: 40px;
+  min-height: 80px;
+  padding: 20px;
   align-items: center;
   background-color: white;
   box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .hugo-blog .mdl-mini-footer {
+    flex-flow: column;
+  }
 }
 .hugo-blog .pagination {
   display: flex;
