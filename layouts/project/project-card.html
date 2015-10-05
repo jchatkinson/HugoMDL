@@ -1,7 +1,7 @@
 <!-- Make a card view for projects -->
 <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp project-card">
     <!-- card title -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background: url('{{.}}') center / cover;{{end}}{{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+        <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background: url('{{.}}'); background-size: cover;{{end}}{{with .Params.cardbackground}}background-color:{{.}};{{end}}">
         <div class="project-title"><a href="{{ .RelPermalink }}" {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></div>
     </div>
     <!-- More link and project links -->
