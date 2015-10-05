@@ -5,11 +5,11 @@ HugoMDL is a multipage responsibe blog/portfolio theme for [Hugo](http://gohugo.
 
 At present it suits my needs, but feel free to help improve this theme by forking a copy and submitting a pull request. 
 
-[! HugoMDL Homepage Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/screenshot.png)
+![HugoMDL Homepage Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/screenshot.png)
 
-[! HugoMDL Projects Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/projects.png)
+![HugoMDL Projects Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/projects.png)
 
-[! HugoMDL Post Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/post.png)
+![ HugoMDL Post Screenshot](https://raw.githubusercontent.com/jchatkinson/HugoMDL/master/images/post.png)
 
 ## Installation
 
