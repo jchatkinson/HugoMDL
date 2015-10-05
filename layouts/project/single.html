@@ -13,6 +13,16 @@
                 <span>{{ .Date.Format "Jan 2, 2006" }}</span>
             </div>
             <div class="section-spacer"></div>
+            <div><span>
+                {{with .Params.repo}}
+                    <a id="repolink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-social-github"></i><span class="visuallyhidden">Github</span></a>
+                    <span for="repolink" class="mdl-tooltip">Code Repository</span>
+                {{end}}
+                {{with .Params.web}}
+                    <a id="sitelink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-link"></i><span class="visuallyhidden">Website</span></a>
+                    <span for="sitelink" class="mdl-tooltip">Website Link</span>
+                {{end}}
+            </span></div>
         </div>
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text hugo-content">

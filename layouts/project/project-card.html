@@ -8,7 +8,11 @@
     <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ .RelPermalink }}">More Info</a>
         <div class="mdl-layout-spacer"></div>
-        {{ with .Params.repo }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}"><i class="material-icons_2x icon ion-social-github"></i></a>{{ end }}
-        {{ with .Params.web }}<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}"><i class="material-icons_2x icon ion-link"></i></a>{{ end }}
+        {{ with .Params.repo }}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}" aria-label="Project Repository" title="Project Repository"><i class="material-icons_2x icon ion-social-github"></i></a>
+        {{ end }}
+        {{ with .Params.web }}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon-button" href="{{.}}" aria-label="Project Website" title="Project Website"><i class="material-icons_2x icon ion-link"></i></a>
+        {{ end }}
     </div>
 </div>

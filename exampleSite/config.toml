@@ -1,0 +1,19 @@
+baseurl = "http://your.base.url/"
+languageCode = "en-us"
+title = "My HugoMDL Site"
+theme = "HugoMDL"
+MetaDataFormat = "yaml"
+[permalinks]
+	page = "/:title/"
+	about = "/:filename/"
+[params]
+    name = "Firstname Lastname"
+    description = "A place to publish my incomprehensible ramblings" #meta description
+    image = "/images/avatar-192x210.png" #for frontpage profile card
+    website = "example.com"
+    email = "Firstname@example.com"
+    twitter = "https://twitter.com/firstname_lastname"
+    github = "https://github.com/firstname_lastname/"
+    copyrightyear = "2015"
+    frontpageposts = 6 #number of post cards to display on frontpage
+    

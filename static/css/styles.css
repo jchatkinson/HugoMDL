@@ -21,6 +21,7 @@ body .hugo-blog {
   width: 100%;
   margin: 0 auto;
   flex-shrink: 0;
+  justify-content: center
 }
 .hugo-blog .hugo-blog__list {
   max-width: 900px;
@@ -125,18 +126,18 @@ body .hugo-blog {
 }
 .hugo-blog .material-icons {
   font-size: 1em;
-  cursor: hand;
+  cursor: pointer;
 }
 .hugo-blog .icon-button {
   min-width: 32px;
 }
 .hugo-blog .material-icons_lg {
   font-size: 1.33em;
-  cursor: hand;
+  cursor: pointer;
 }
 .hugo-blog .material-icons_2x {
   font-size: 2.0em;
-  cursor: hand;
+  cursor: pointer;
 }
 .hugo-blog .mdl-card .meta.meta--fill {
   justify-content: space-between;
@@ -148,32 +149,78 @@ body .hugo-blog {
   display: flex;
   flex-direction: column;
 }
+.hugo-blog .profile-card {
+  max-width: 360px;
+}
 .hugo-blog .profile-card .mdl-card__media {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.hugo-blog .profile-card #fab_ctn {
-  position: absolute;
-  top: 296px;
-  right: 16px;
-  transform: translate(0px, -28px);
-}
-.hugo-blog .profile-card .mdl-card__media {
   font-size: 13px;
   font-weight: 500;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+  padding: 0px;
 }
-.hugo-blog .profile-card .mdl-card__media img {
-  max-width: 100%;
-  max-height: 100%;
+.hugo-blog .profile-card .mdl-card__media {
+  background-size: cover;
+  /*background-position: 50% 50%;*/
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 .hugo-blog .profile-card .mdl-card__supporting-text {
   background-color: #F5F5F5;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+.hugo-blog .profile-card #fab_ctn {
+  position: absolute;
+  top: calc(100% - 92px);
+  right: 16px;
+  /*transform: translate(0px, -28px);*/
+}
+.mdl-button--fab_flinger-container.is-showing-options > button i {
+  transition: transform 0.3s linear;
+  transform: rotate(45deg);
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button {
+  display: block;
+  animation-name: enter;
+  animation-fill-mode: forwards;
+  animation-duration: 0.1s;
+  transform-origin: bottom center;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(4) {
+  animation-delay: 0.4s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(5) {
+  animation-delay: 0.5s;
+}
+.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options button {
+  transform: scale(0);
+  display: none;
 }
 .hugo-blog .hugo-blog__posts > .hugo-nav {
   margin: 12px 15px;
@@ -266,17 +313,10 @@ body .hugo-blog {
 .hugo-blog .section-spacer {
   flex-grow: 1;
 }
-.hugo-blog .profile-card {
-  overflow: visible;
-  z-index: 10;
-}
-.hugo-blog .amazing .mdl-card__title {
-  background-color: #263238;
-}
 .hugo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('/images/avatar.png');
+  /*background-image: url('/images/avatar.png');*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -337,53 +377,6 @@ body .hugo-blog {
 }
 .hugo-blog .pagination .disabled {
   color: rgba(0, 0, 0, 0.54);
-}
-.mdl-button--fab_flinger-container {
-  position: fixed;
-  bottom: 90px;
-  right: 90px;
-}
-.mdl-button--fab_flinger-container.is-showing-options > button i {
-  transition: transform 0.3s linear;
-  transform: rotate(45deg);
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options {
-  display: flex;
-  flex-direction: column-reverse;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button {
-  display: block;
-  animation-name: enter;
-  animation-fill-mode: forwards;
-  animation-duration: 0.1s;
-  transform-origin: bottom center;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(1) {
-  animation-delay: 0.1s;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(2) {
-  animation-delay: 0.2s;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(3) {
-  animation-delay: 0.3s;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(4) {
-  animation-delay: 0.4s;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(5) {
-  animation-delay: 0.5s;
-}
-.mdl-button--fab_flinger-container.is-showing-options .mdl-button--fab_flinger-options button:nth-of-type(6) {
-  animation-delay: 0.6s;
-}
-.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options {
-  position: absolute;
-  bottom: 100%;
-  margin-bottom: 10px;
-}
-.mdl-button--fab_flinger-container .mdl-button--fab_flinger-options button {
-  transform: scale(0);
-  display: none;
 }
 @keyframes enter {
   from {

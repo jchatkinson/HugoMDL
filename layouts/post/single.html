@@ -8,7 +8,7 @@
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-            <div class="minilogo"></div>
+            {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
             <div>
                 <strong>{{ .Params.author.name }}</strong>
                 <span>{{ .Date.Format "Jan 2, 2006" }}</span>
@@ -23,8 +23,8 @@
         </div>
         
         <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
-            <a class="black-text" href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
-            <p class="italic grey-text text-darken-3">{{ .Params.author.description }}</p>
+            <a href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
+            <p>{{ .Params.author.description }}</p>
         </div>  
     </div>
 

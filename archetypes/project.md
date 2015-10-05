@@ -14,16 +14,16 @@ tags:
     - "meta"
     - "project"
 "author": # used to fill out the project page. Unset fields are removed from page
-    name: "First Last"
+    name: "Firstname Lastname"
     description: "Writer of stuff"
     website: "http://example.com/"
-    email: "jeremy@example.com"
-    twitter: "example_twittername"
+    email: "firstname@example.com"
+    twitter: "https://twitter.com/"
     github: "https://github.com/"
-    image: "/images/avatar.png" 
+    image: "/images/avatar-64x64.png"
 
 ---
 
-
+This is my project.
 
 

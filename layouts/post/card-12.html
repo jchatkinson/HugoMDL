@@ -14,7 +14,7 @@
     <!-- Author and Date -->
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
         <!-- author's profile pic -->
-        <div class="minilogo"></div> 
+        {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
         <div>
             <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
             <span>{{ .Date.Format "Jan 2, 2006" }}</span>
