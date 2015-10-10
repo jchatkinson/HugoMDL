@@ -33,6 +33,10 @@ There are a few different places you need to configure
 
 Look at the `exampleSite\config.toml` file for the relevent site parameters you need to fill out
 
+### Background Image
+
+Simply replace `\static\images\background.jpg` with a background of your choice.
+
 ### About page
 
 Look at the `exampleSite\about.md` file for an example 'About' page. 

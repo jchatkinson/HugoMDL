@@ -1,26 +1,27 @@
 ---
-author:
-  description: Writer of stuff
-  email: jeremy@example.com
-  github: https://github.com/
-  image: /images/avatar.png
-  name: First Last
-  twitter: example_twittername
-  website: http://example.com/
-cardbackground: '#222444'
-#cardimage: /images/default.jpg
+"author":
+  description: "Writer of stuff"
+  email: "jeremy@example.com"
+  github: "https://github.com/"
+  image: "/images/avatar.png"
+  name: "First Last"
+  twitter: "example_twittername"
+  website: "http://example.com/"
+cardbackground: "#222444"
+cardthumbimage: "/images/default-small.jpg"
+cardheaderimage: "/images/default.jpg"
+#cardtitlecolor: "#fafafa"
 categories:
-- project
-date: 2015-10-05T02:27:08Z
-description: Description of the sample project
-#headerimage: /images/default.jpg
-repo: http://github.com/
+  - "project"
+date: "2015-10-05T02:27:08Z"
+description: "Description of the sample project"
+
+repo: "http://github.com/"
 tags:
-- meta
-- project
-title: Awesome Collaborative Project
-#titlecolor: '#fafafa'
-#web: http://github.com/
+  - "meta"
+  - "project"
+title: "Awesome Collaborative Project"
+#web: "http://github.com/"
 ---
 
 Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&B brunch sustainable chia retro 90's tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90's wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz. Ugh whatever raw denim taxidermy paleo Kickstarter polaroid, Austin before they sold out iPhone readymade mlkshk mixtape.
