@@ -88,7 +88,7 @@ body .hugo-blog {
   align-items: center;
 }
 .hugo-blog .mdl-card__supporting-text strong {
-  font-weight: 400;
+  font-weight: bold;
 }
 .hugo-blog .mdl-card__media ~ .mdl-card__supporting-text {
   min-height: 64px;
