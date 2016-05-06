@@ -5,7 +5,7 @@
 
     <div class="mdl-card__media about-media" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
       <div class="profile-pic-container">
-        <div class="profilepic"></div>
+        <div class="profilepic" style="background-image: url('{{ .Site.Params.avatar }}');"></div>
       </div>
     </div>
 

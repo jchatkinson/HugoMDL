@@ -8,6 +8,8 @@ MetaDataFormat = "yaml"
 	about = "/:filename/"
 [params]
     author = "Firstname Lastname"
+    avatar = "/images/avatar.png"
+    background = "/images/background.jpg"
     description = "A place to publish my incomprehensible ramblings" #meta description
     image = "/images/avatar-192x210.png" #for frontpage profile card
     website = "example.com"
