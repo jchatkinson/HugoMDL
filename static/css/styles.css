@@ -1,5 +1,5 @@
 body::before {
-    background-image: url('/images/background.jpg');
+    /*background-image: url('{{ .Site.Params.background }}');*/
     background-size: cover;
     background-attachment: fixed;
     content: '';
@@ -88,7 +88,7 @@ body .hugo-blog {
   align-items: center;
 }
 .hugo-blog .mdl-card__supporting-text strong {
-  font-weight: 400;
+  font-weight: bold;
 }
 .hugo-blog .mdl-card__media ~ .mdl-card__supporting-text {
   min-height: 64px;
@@ -398,7 +398,7 @@ body .hugo-blog {
 .hugo-blog .about .profile-pic-container .profilepic {
   width: 150px;
   height: 150px;
-  background-image: url('/images/avatar.png');
+  /*background-image: url('/images/avatar.png');*/
   background-position: 50% calc(50% + 10px);
   background-repeat: no-repeat;
   background-size: 95%;
