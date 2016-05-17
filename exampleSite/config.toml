@@ -7,13 +7,17 @@ MetaDataFormat = "yaml"
 	page = "/:title/"
 	about = "/:filename/"
 [params]
-    name = "Firstname Lastname"
+    author = "Firstname Lastname"
+    avatar = "/images/avatar.png"
+    background = "/images/background.jpg"
     description = "A place to publish my incomprehensible ramblings" #meta description
     image = "/images/avatar-192x210.png" #for frontpage profile card
     website = "example.com"
     email = "Firstname@example.com"
     twitter = "https://twitter.com/firstname_lastname"
     github = "https://github.com/firstname_lastname/"
+    linkedin = "https://linkedin.com/in/firstname_lastname/"
+    facebook = "https://facebook.com/firstname_lastname/"
     copyrightyear = "2015"
     frontpageposts = 6 #number of post cards to display on frontpage
     

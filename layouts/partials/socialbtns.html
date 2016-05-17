@@ -1,20 +1,30 @@
-{{ if .Site.Params.email }}
+{{ if isset .Site.Params "email" }}
 <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="mailto:{{ .Site.Params.email }}?subject=Hi">
     <i class="material-icons_lg icon ion-email"></i>
     <span class="visuallyhidden">Email</span>
 </a>
 {{ end }}
-
-{{ if .Site.Params.github}}
+{{ if isset .Site.Params "github" }}
 <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="{{ .Site.Params.github }}">
     <i class="material-icons_lg icon ion-social-github"></i>
     <span class="visuallyhidden">Github</span>
 </a>
 {{ end }}
-
-{{ if .Site.Params.twitter }}
+{{ if isset .Site.Params "twitter" }}
 <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="{{ .Site.Params.twitter }}">
     <i class="material-icons_lg icon ion-social-twitter "></i>
     <span class="visuallyhidden">Twitter</span>
 </a>
+{{ end }}
+{{ if isset .Site.Params "linkedin" }}
+<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="{{ .Site.Params.linkedin }}">
+    <i class="material-icons_lg icon ion-social-linkedin "></i>                        
+    <span class="visuallyhidden">LinkedIn</span>
+</a>
+{{ end }}
+{{ if isset .Site.Params "facebook" }}
+    <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-mini-footer--social-btn social-btn" href="{{ .Site.Params.facebook }}">
+        <i class="material-icons_lg icon ion-social-facebook "></i>                        
+        <span class="visuallyhidden">Facebook</span>
+    </a>
 {{ end }}
