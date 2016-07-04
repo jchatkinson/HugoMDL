@@ -25,17 +25,16 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 To develop on c9, add the hugo binary to the workspace, then add it to the path using `export PATH=$PATH:/home/ubuntu/workspace/hugo`
 To serve the site from c9, cd to site root and use `hugo server --bind="0.0.0.0" --port=8080  --watch --disableLiveReload` 
 
-## Configure the Theme
+# Configure the Theme
 
-There are a few different places you need to configure
+There are a few different places you need to configure. First, check exampleSite/config.toml for an example site
+configuration file. Here, you can set site-wide options like background, author name, and contact info.
 
-### Site-wide configuration
+You can also use this file to configure your site's menu system. The stanzas in this file correspond to the top level
+items in the site navigation menus. You may rename, remove, or add any entries as you see fit.
 
-Look at the `exampleSite\config.toml` file for the relevent site parameters you need to fill out
-
-### Background Image
-
-Simply replace `\static\images\background.jpg` with a background of your choice.
+If you use the suggested entry names listed in the example configuration file, your site's pages will inherit this
+theme's formatting. The following subsections detail these specialized styles.
 
 ### About page
 
