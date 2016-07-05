@@ -420,14 +420,6 @@ body .hugo-blog {
 .hugo-blog .mdl-layout__header--transparent .mdl-navigation__link{
   color: white;
 }
-.hugo-blog .mdl-layout__header--transparent .mdl-navigation__link.active,
-.hugo-blog .mdl-layout__drawer .mdl-navigation__link.active {
-  color: rgb(255,171,64);
-}
-.hugo-blog .mdl-layout__header--transparent .mdl-navigation__link:hover {
-  color: rgb(255,171,64);
-  
-}
 .hugo-blog .project-card {
   min-height: 275px;
 }
