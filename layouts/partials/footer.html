@@ -1,15 +1,15 @@
-            <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer--left-section">
-                    {{ partial "socialbtns.html" . }}
-                </div>
-                <div class="mdl-mini-footer--right-section">
-                    <span>© {{ .Site.Params.copyrightyear }} {{ .Site.Params.author }}</span>
-                </div>
-            </footer>
         </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer--left-section">
+                {{ partial "socialbtns.html" . }}
+            </div>
+            <div class="mdl-mini-footer--right-section">
+                <span>© {{ .Site.Params.copyrightyear }} {{ .Site.Params.author }}</span>
+            </div>
+        </footer>
         <div class="mdl-layout__obfuscator"></div>
     </div>
-    <script src="/js/material.min.js"></script>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     {{ if .IsPage }} {{ if ( eq .Type "post" ) }}<script src="/js/prism.js"></script>{{ end }}{{ end }}
     {{ if .IsNode }} {{ partial "JS-cardmedia.html" . }} {{ partial "JS-fabbutton.html" . }}{{end}}
 </body>
