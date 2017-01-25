@@ -47,6 +47,9 @@
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.1.3/material.{{ $.Scratch.Get "mdlPrimary" }}-{{ $.Scratch.Get "mdlAccent" }}.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/hmdl-style.css"/>
+    {{- if eq .Type "presentation" }}
+    <link rel="stylesheet" href="/css/remark.css" />
+    {{ end }}
 
     {{- partial "extra-header.html" . }}
 
@@ -55,5 +58,7 @@
 <!-- TODO: rethink background -->
 <body style="background-image: url('{{ .Site.Params.background }}');">
     <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">
-        {{- partial "navbar.html" . }}
+        {{- if not (eq .Type "presentation") }}
+            {{- partial "navbar.html" . }}
+        {{- end }}
         <main class="mdl-layout__content">
