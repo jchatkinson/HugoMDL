@@ -8,3 +8,6 @@ font-family: 'Yanone Kaffeesatz';
 font-weight: normal;
 }
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+div.remark-slide-content>p, div.remark-slide-content>ul>li {
+    font-size: 1.2em
+}
