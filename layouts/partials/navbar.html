@@ -1,25 +1,25 @@
-    <!-- Transparent Header and Menu Buttons -->
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
-        <div class="mdl-layout__header-row">
-            <!-- Title -->
-            {{ if eq .Title "Projects" }}
+        <!-- Site navigation -->
+        <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                {{- if eq .Title "Projects" }}
+                <!-- Title -->
+                <span class="mdl-layout-title">{{ title .Title }}</span>
+                {{- end }}
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                {{- range .Site.Menus.main }}
+                <a class="mdl-navigation__link{{ if eq ($.Permalink | relURL) (.URL | safeHTML) }} mdl-color-text--accent{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                {{- end }}
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            {{- if eq .Title "Projects" }}
             <span class="mdl-layout-title">{{ title .Title }}</span>
-            {{ end }}
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation -->
+            {{- end }}
             <nav class="mdl-navigation">
-            {{ range .Site.Menus.main }}
-              <a class="mdl-navigation__link{{ if eq ($.Permalink | relURL) (.URL | safeHTML) }} mdl-color-text--accent{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
+            {{- range .Site.Menus.main }}
+            <a class="mdl-navigation__link{{ if eq ($.Permalink | relURL) (.URL | safeHTML) }} mdl-color-text--accent{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+            {{- end }}
             </nav>
         </div>
-    </header>
-    <div class="mdl-layout__drawer">
-        {{ if eq .Title "Projects" }}<span class="mdl-layout-title">{{ title .Title }}</span>{{end}}
-        <nav class="mdl-navigation">
-        {{ range .Site.Menus.main }}
-          <a class="mdl-navigation__link{{ if eq ($.Permalink | relURL) (.URL | safeHTML) }} mdl-color-text--accent{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
-        </nav>
-    </div>

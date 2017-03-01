@@ -1,24 +1,18 @@
-<!-- Make a card view for posts -->
-<div class="mdl-card mdl-cell mdl-cell--12-col">
-
-    <!-- card title -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
-        <h3><a href="{{ .RelPermalink }}" {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></h3>
-    </div>
-
-    <!-- Snippet of post -->
-    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-        {{ .Summary }}
-    </div>
-
-    <!-- Author and Date -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- author's profile pic -->
-        {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
-        <div>
-            <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
-            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-        </div>
-    </div>
-
-</div>
+                <!-- Make a card view for posts -->
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+                        <h3><a href="{{ .RelPermalink }}" {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></h3>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                        {{ .Summary }}
+                    </div>
+                    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                        {{- with .Params.author.image }}
+                        <div class="minilogo" style="background-image: url('{{.}}');"></div>
+                        {{- end }}
+                        <div>
+                            <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
+                            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+                        </div>
+                    </div>
+                </div>

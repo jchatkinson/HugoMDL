@@ -1,39 +1,41 @@
-{{ partial "header.html" . }}
-
-<div class="hugo-blog__posts mdl-grid">
-    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
-            <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
-        </div>
-        
-        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-            {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
-            <div>
-                <strong>{{ .Params.author.name }}</strong>
-                <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            {{- partial "header.html" . }}
+            <div class="hugo-blog__posts mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+                        <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
+                    </div>
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                        {{- with .Params.author.image }}
+                        <div class="minilogo" style="background-image: url('{{.}}');"></div>
+                        {{- end }}
+                        <div>
+                            <strong>{{ .Params.author.name }}</strong>
+                            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+                        </div>
+                        <div class="section-spacer"></div>
+                        <div><span>
+                            {{- with .Params.repo }}
+                            <a id="repolink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-social-github"></i><span class="visuallyhidden">Github</span></a>
+                            <span for="repolink" class="mdl-tooltip">Code Repository</span>
+                            {{- end }}
+                            {{- with .Params.web }}
+                            <a id="sitelink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-link"></i><span class="visuallyhidden">Website</span></a>
+                            <span for="sitelink" class="mdl-tooltip">Website Link</span>
+                            {{- end }}
+                        </span></div>
+                    </div>
+                        
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text hugo-content">
+                        {{ .Content }}
+                    </div>
+                    
+                    <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
+                        <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ .Params.author.name }}</a>
+                        {{- with .Params.author.description }}
+                        <p>{{.}}</p>
+                        {{- end }}
+                    </div>  
+                </div>
+                {{- partial "prevnextbtns.html" . }} 
             </div>
-            <div class="section-spacer"></div>
-            <div><span>
-                {{with .Params.repo}}
-                    <a id="repolink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-social-github"></i><span class="visuallyhidden">Github</span></a>
-                    <span for="repolink" class="mdl-tooltip">Code Repository</span>
-                {{end}}
-                {{with .Params.web}}
-                    <a id="sitelink" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{.}}"><i class="material-icons icon ion-link"></i><span class="visuallyhidden">Website</span></a>
-                    <span for="sitelink" class="mdl-tooltip">Website Link</span>
-                {{end}}
-            </span></div>
-        </div>
-            
-        <div class="mdl-color-text--grey-700 mdl-card__supporting-text hugo-content">
-            {{ .Content }}
-        </div>
-        
-        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
-            <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ .Params.author.name }}</a>
-            {{with .Params.author.description }}<p>{{.}}</p>{{end}}
-        </div>  
-    </div>
-    {{ partial "prevnextbtns.html" . }} 
-</div>
-{{ partial "footer.html" . }}
+            {{- partial "footer.html" . }}
