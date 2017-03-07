@@ -1,5 +1,6 @@
         <!-- Close out main content and present footer -->
         </main>
+        {{- if not (and .IsPage (eq .Type "presentation")) }}
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer--left-section">
                 {{- partial "socialbtns.html" . }}
@@ -8,9 +9,17 @@
                 <span>© {{ .Site.Params.copyrightyear }} {{ .Site.Params.author }}</span>
             </div>
         </footer>
+        {{- end }}
         <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    {{- if and .IsPage (eq .Type "presentation") }}
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+        var slideshow = remark.create();
+    </script>
+    {{- end }}
     {{- if .IsNode }}
     <script src="/js/cardmedia.js"></script>
     <script src="/js/fabbutton.js"></script>
