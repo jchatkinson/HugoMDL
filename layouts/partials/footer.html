@@ -1,6 +1,6 @@
         <!-- Close out main content and present footer -->
         </main>
-        {{ if not (eq .Type "presentation") -}}
+        {{- if not (and .IsPage (eq .Type "presentation")) }}
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer--left-section">
                 {{- partial "socialbtns.html" . }}
