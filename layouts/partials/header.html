@@ -46,9 +46,6 @@
     <link rel="stylesheet" href="/css/ionicons.min.css"/>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.1.3/material.{{ $.Scratch.Get "mdlPrimary" }}-{{ $.Scratch.Get "mdlAccent" }}.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    {{- if and .IsPage (or (eq .Type "post") (eq .Type "project")) }}
-    <link rel="stylesheet" href="/css/prism.css"/>
-    {{- end }}
     <link rel="stylesheet" href="/css/hmdl-style.css"/>
 
     {{- partial "extra-header.html" . }}
@@ -57,15 +54,6 @@
 </head>
 <!-- TODO: rethink background -->
 <body style="background-image: url('{{ .Site.Params.background }}');">
-    {{- if .IsPage }}
-        {{- if (or ( eq .Type "post" ) ( eq .Type "project") ( eq .Type "about")) }}
-    <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
-        {{- else }}
-    <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-        {{- end }}
-    {{- else }}
-    <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-    {{- end }}
-
+    <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">
         {{- partial "navbar.html" . }}
         <main class="mdl-layout__content">

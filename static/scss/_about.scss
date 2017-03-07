@@ -1,0 +1,39 @@
+// Styling for the "about" page
+.hmdl-about {
+
+    #hmdl-about-media {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    #hmdl-about-text {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding-top: 110px;
+
+        &>h3, &>h6 {
+            margin: auto;
+        }
+    }
+
+    .profile-pic-container {
+        transform: translate(0px, 75px);
+
+        .profilepic {
+            width: 150px;
+            height: 150px;
+            background-position: 50% calc(50% + 10px);
+            background-repeat: no-repeat;
+            background-size: 95%;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border-style: solid;
+            border-color: #789296;
+            border-width: 3px;
+        }
+    }
+
+}

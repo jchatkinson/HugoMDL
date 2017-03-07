@@ -1,19 +1,25 @@
-{{ partial "header.html" . }}
-{{ partial "navbar.html" . }}
-
-<h3>Generic List Heading</h3>
-
-{{ range .Data.Pages }}
-{{ if eq .Type "post" }}
-<div class="section">
-    <h5><a class="black-text" href="{{ .Permalink }}">{{ .Title }}</a></h5> 
-    <b><a class="black-text" href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></b>
-    <br>{{ .Date.Format "Mon, Jan 2, 2006" }}
-<!--    <blockquote>{{ .Summary }}</blockquote>-->
-    <a href="{{ .Permalink }}" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
-</div>
-<div class="divider"></div>
-{{ end }}
-{{ end }}
-
-{{ partial "footer.html" . }}
+            {{- partial "header.html" . }}
+            <div class="hmdl-list mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                        <h3>{{ .Title }}</h3>
+                    </div>
+                    {{- partial "pagination.html" }}
+                    {{- range .Paginator.Pages }}
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            {{- with .Params.author.image }}
+                            <div class="minilogo" style="background-image: url('{{ . }}');"></div>
+                            {{- end }}
+                            <div>
+                                <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
+                                <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+                            </div>
+                            <a href="{{ .RelPermalink }}"><h5 class="mdl-color-text--grey-600">{{ title .Title }}</h5></a>
+                        </div>
+                    </div>
+                    {{- end }}
+                    {{- partial "pagination.html" }}
+                </div>
+            </div>
+            {{ partial "footer.html" . }}

@@ -1,10 +1,10 @@
             {{- partial "header.html" . }}
-            <div class="hugo-blog__posts mdl-grid">
+            <div class="hmdl-page mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+                    <div class="hmdl-page-banner mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
                         <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
                     </div>
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                    <div class="hmdl-page-meta mdl-color-text--grey-700 mdl-card__supporting-text">
                         {{- with .Params.author.image }}
                         <div class="minilogo" style="background-image: url('{{.}}');"></div>
                         {{- end }}
@@ -25,11 +25,11 @@
                         </span></div>
                     </div>
                         
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text hugo-content">
+                    <div class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
                         {{ .Content }}
                     </div>
                     
-                    <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
+                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
                         <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ .Params.author.name }}</a>
                         {{- with .Params.author.description }}
                         <p>{{.}}</p>

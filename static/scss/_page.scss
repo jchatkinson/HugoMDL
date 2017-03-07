@@ -1,0 +1,122 @@
+// Default styling for content pages (posts, projects, about, misc...)
+.hmdl-page {
+
+    blockquote {
+        background: #ddd;
+        border-left: 10px solid #aaa;
+        margin: 16px 10px;
+        padding: 0.5em 10px;
+        font-style: normal;
+
+        &:before {
+            content: none;
+        }
+
+        &:after {
+            content: none;
+        }
+
+        p {
+            margin: 0 auto;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    p {
+        margin: 16px auto;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .hmdl-page-banner {
+        height: 280px;
+    }
+
+    .hmdl-page-comments {
+        background-color: #EEE;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 32px;
+        box-sizing: border-box;
+        width: 100%;
+
+        p {
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .hmdl-page-content {
+        border: 0;
+        box-sizing: border-box;
+        min-height: 64px;
+        padding: 64px;
+        width: 100%;
+
+        h1, h2, h3 {
+            margin-top: 64px;
+        }
+
+        .highlight {
+            border-radius: 4px;
+            padding: 8px;
+
+            pre {
+                margin: 0;
+            }
+        }
+    }
+
+    .custom-header {
+        background-color: transparent;
+    }
+
+    .section-spacer {
+        flex-grow: 1;
+    }
+}
+
+.hmdl-page-meta {
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    width: 100%;
+
+    &>* {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &>a {
+        margin-left: 16px;
+    }
+
+    &>.meta__favorites {
+        flex-direction: row;
+        margin: 0 8px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .minilogo {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        border-radius: 22px;
+        background-color: #f5f5f5;
+        height: 44px;
+        margin-right: 16px;
+        width: 44px;
+    }
+}

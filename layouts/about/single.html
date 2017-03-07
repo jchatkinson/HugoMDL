@@ -1,16 +1,16 @@
             {{- partial "header.html" . }}
-            <div class="hugo-blog__posts mdl-grid about">
+            <div class="hmdl-page hmdl-about mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__media about-media" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+                    <div id="hmdl-about-media" class="hmdl-page-banner mdl-card__media about-media" style="{{with .Params.cardheaderimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
                         <div class="profile-pic-container">
                             <div class="profilepic" style="background-image: url('{{ .Site.Params.avatar }}');"></div>
                         </div>
                     </div>
 
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text about-text">
+                    <div id="hmdl-about-text" class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
                         <h3>{{ .Site.Params.author }}</h3>
                         <h6>{{ .Params.blurb }}</h6>
-                        <div class="hugo-content">
+                        <div>
                             {{- if .Content }}
                                 {{ .Content }}
                             {{- end }}

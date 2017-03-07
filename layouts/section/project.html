@@ -1,5 +1,5 @@
             {{- partial "header.html" . }}
-            <div class="hugo-blog__list mdl-grid">
+            <div class="hmdl-list mdl-grid">
             {{- range .Data.Pages }}
                 {{- if eq .Type "project" }}
                     {{ .Render "project-card" }}

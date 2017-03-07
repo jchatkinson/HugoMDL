@@ -3,6 +3,7 @@ var VISIBLE_CLASS = "is-showing-options",
     fab_btn  = document.getElementById("fab_btn"),
     fab_ctn  = document.getElementById("fab_ctn"),
     showOpts = function(e) {
+        console.log('clicked!');
         var processClick = function (evt) {
         if (e !== evt) {
             fab_ctn.classList.remove(VISIBLE_CLASS);

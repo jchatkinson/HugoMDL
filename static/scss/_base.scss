@@ -1,5 +1,6 @@
 body {
     background-size: cover;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
 
     &:before {
         background-size: cover;
@@ -13,8 +14,20 @@ body {
         top: 0;
         position: fixed;
     }
-
-    .hugo-blog {
-        font-family: 'Roboto', 'Helvetica', sans-serif;
-    }
 }
+
+main {
+    max-width: 900px;
+    // padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-shrink: 0;
+    justify-content: center;
+    padding-top: 160px;
+    padding-bottom: 80px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+
