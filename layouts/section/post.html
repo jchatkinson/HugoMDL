@@ -1,17 +1,14 @@
-<!-- List of posts -->
-{{ partial "header.html" . }}  
-
-<div class="hugo-blog__list mdl-grid">
-    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-        <!-- List heading -->
-        <div class="mdl-card__media mdl-color-text--grey-50">
-            <h3>All Posts:</h3>
-        </div>
-
-        <!-- list of posts -->
-        {{ template "theme/partials/pagination.html" . }} {{ range .Paginator.Pages }} {{ .Render "listitem" }} {{ end }}
-        {{ partial "pagination.html" . }}
-    </div>
-</div>
-
-{{ partial "footer.html" . }}
+            {{- partial "header.html" . }}  
+            <div class="hmdl-list mdl-grid">
+                <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                        <h3>All Posts:</h3>
+                    </div>
+                    {{- partial "pagination.html" . }}
+                    {{- range .Paginator.Pages }}
+                        {{ .Render "listitem" }}
+                    {{- end }}
+                    {{- partial "pagination.html" . }}
+                </div>
+            </div>
+            {{- partial "footer.html" . }}

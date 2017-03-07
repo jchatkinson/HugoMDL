@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     {{ .Hugo.Generator }}
-        <!--Favicon-->
-        <link rel="icon" type="image/png" href="/images/favicon.ico">
-        
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="My thoughts and rambles">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ .Title }}</title>
-        <!-- Add to homescreen for Chrome on Android -->
-        <meta name="mobile-web-app-capable" content="yes">
-        <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
-        <!-- Add to homescreen for Safari on iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-        <meta name="msapplication-TileColor" content="#3372DF">
 
-        <!-- Allow user to choose MDL theme -->
-        {{ if isset .Site.Params "mdlPrimary" }}
-          {{ $.Scratch.Set "mdlPrimary" .Site.Params.mdlPrimary }}
-        {{ else }}
-          {{ $.Scratch.Set "mdlPrimary" "grey" }}
-        {{ end }}
-        {{ if isset .Site.Params "mdlAccent" }}
-          {{ $.Scratch.Set "mdlAccent" .Site.Params.mdlAccent }}
-        {{ else }}
-          {{ $.Scratch.Set "mdlAccent" "orange" }}
-        {{ end }}
-    
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
-        <link rel="stylesheet" href="/css/ionicons.min.css"/>
-        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.1.3/material.{{ $.Scratch.Get "mdlPrimary" }}-{{ $.Scratch.Get "mdlAccent" }}.min.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="/css/styles.css"/>
-        {{ if .IsPage }} {{ if ( eq .Type "post" ) }} <link rel="stylesheet" href="/css/prism.css" /> {{end}} {{end}}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="My thoughts and rambles">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- User-specified favicon -->
+    {{- if isset .Site.Params "favicon" }}
+        {{- $.Scratch.Set "favicon" .Site.Params.favicon }}
+    {{- else }}
+        {{- $.Scratch.Set "favicon" "/images/favicon.ico" }}
+    {{- end }}
+    <link rel="icon" type="image/png" href="{{ $.Scratch.Get "favicon" }}">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Allow user to choose MDL theme -->
+    {{- if isset .Site.Params "mdlPrimary" }}
+        {{- $.Scratch.Set "mdlPrimary" .Site.Params.mdlPrimary }}
+    {{- else }}
+        {{- $.Scratch.Set "mdlPrimary" "grey" }}
+    {{- end }}
+    {{- if isset .Site.Params "mdlAccent" }}
+        {{- $.Scratch.Set "mdlAccent" .Site.Params.mdlAccent }}
+    {{- else }}
+        {{- $.Scratch.Set "mdlAccent" "orange" }}
+    {{- end -}}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.1.3/material.{{ $.Scratch.Get "mdlPrimary" }}-{{ $.Scratch.Get "mdlAccent" }}.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/hmdl-style.css"/>
+
+    {{- partial "extra-header.html" . }}
+
+    <title>{{ .Title }}</title>
 </head>
-
+<!-- TODO: rethink background -->
 <body style="background-image: url('{{ .Site.Params.background }}');">
-    {{ if .IsPage }} 
-        {{ if (or ( eq .Type "post" ) ( eq .Type "project") ( eq .Type "about")) }} 
-            <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">  
-        {{ else }}
-            <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-        {{end}}
-    {{ else }} 
-        <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-    {{end}}
-        
-    {{ partial "navbar.html" . }}
-    <!-- Main Content goes here -->
-    <main class="mdl-layout__content">
+    <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">
+        {{- partial "navbar.html" . }}
+        <main class="mdl-layout__content">

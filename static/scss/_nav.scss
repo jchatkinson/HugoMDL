@@ -1,0 +1,29 @@
+// Styles nav buttons between pages
+.hmdl-body nav.mdl-cell {
+    margin: 12px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:first-child .mdl-button,
+        &:last-child .mdl-button {
+            margin-right: 16px;
+        }
+    }
+
+    .mdl-button {
+        color: rgba(0, 0, 0, 0.54);
+        background-color: white;
+
+        i {
+            margin-top: -3px;
+        }
+    }
+}

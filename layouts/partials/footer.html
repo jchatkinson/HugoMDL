@@ -1,7 +1,8 @@
+        <!-- Close out main content and present footer -->
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer--left-section">
-                {{ partial "socialbtns.html" . }}
+                {{- partial "socialbtns.html" . }}
             </div>
             <div class="mdl-mini-footer--right-section">
                 <span>© {{ .Site.Params.copyrightyear }} {{ .Site.Params.author }}</span>
@@ -10,7 +11,10 @@
         <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    {{ if .IsPage }} {{ if ( eq .Type "post" ) }}<script src="/js/prism.js"></script>{{ end }}{{ end }}
-    {{ if .IsNode }} {{ partial "JS-cardmedia.html" . }} {{ partial "JS-fabbutton.html" . }}{{end}}
+    {{- if .IsNode }}
+    <script src="/js/cardmedia.js"></script>
+    <script src="/js/fabbutton.js"></script>
+    {{- end }}
+    {{- partial "extra-footer.html" . }}
 </body>
 </html>

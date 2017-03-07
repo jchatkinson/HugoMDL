@@ -1,9 +1,9 @@
-{{ partial "header.html" . }} 
-
-<div class="hugo-blog__list mdl-grid">
-    {{ range .Data.Pages }} 
-      <!-- Responsive Cards for each project -->
-      {{ if eq .Type "project" }}{{ .Render "project-card" }} {{ end }} 
-    {{ end }}
-</div>
-{{ partial "footer.html" . }}
+            {{- partial "header.html" . }}
+            <div class="hmdl-list mdl-grid">
+            {{- range .Data.Pages }}
+                {{- if eq .Type "project" }}
+                    {{ .Render "project-card" }}
+                {{- end }}
+            {{- end }}
+            </div>
+            {{- partial "footer.html" . }}

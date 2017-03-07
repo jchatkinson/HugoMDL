@@ -1,16 +1,20 @@
-<nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.RelPermalink }}" class="hugo-nav__button">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-           <i class="icon ion-android-arrow-back"></i>
-        </button>
-        Older
-    </a>{{end}}
-    <div class="section-spacer"></div>
-    {{ if .NextInSection }}
-    <a href="{{ .NextInSection.RelPermalink }}" class="hugo-nav__button">Newer
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-           <i class="icon ion-android-arrow-forward"></i>
-      </button>
-    </a>{{end}}
-</nav>
+                <!-- Displays buttons for navigating between articles -->
+                <nav class="mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+                    {{- if .PrevInSection }}
+                    <a href="{{ .PrevInSection.RelPermalink }}">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                        <i class="icon ion-android-arrow-back"></i>
+                        </button>
+                        Older
+                    </a>
+                    {{- end }}
+                    <div class="section-spacer"></div>
+                    {{- if .NextInSection }}
+                    <a href="{{ .NextInSection.RelPermalink }}">
+                        Newer
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                            <i class="icon ion-android-arrow-forward"></i>
+                        </button>
+                    </a>
+                    {{- end }}
+                </nav>

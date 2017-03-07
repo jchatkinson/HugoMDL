@@ -1,13 +1,13 @@
-<!-- Styling for a single list item -->
-<div class="mdl-card__list-item mdl-color-text--grey-600">
-    <!-- author block -->
-    <div class="meta">
-        {{with .Params.author.image}}<div class="minilogo" style="background-image: url('{{.}}');"></div>{{end}}
-        <div>
-            <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
-            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-        </div>
-    </div>
-    <!-- post title w/ link -->
-    <a href="{{ .RelPermalink }}"><h5 class="mdl-color-text--grey-600">{{ title .Title }}</h5></a>
-</div>
+                    <!-- Styling for a single list item -->
+                    <div class="mdl-card__list-item mdl-color-text--grey-600">
+                        <div class="hmdl-page-meta">
+                            {{- with .Params.author.image }}
+                            <div class="minilogo" style="background-image: url('{{.}}');"></div>
+                            {{- end }}
+                            <div>
+                                <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
+                                <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+                            </div>
+                            <a href="{{ .RelPermalink }}"><h5 class="mdl-color-text--grey-600">{{ title .Title }}</h5></a>
+                        </div>
+                    </div>

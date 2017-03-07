@@ -1,0 +1,96 @@
+// Styling for the front page of the blog
+.hmdl-frontpage {
+
+    // Styles the profile card
+    .hmdl-profile-card {
+        max-width: 360px;
+
+        // Styling and animation for flyout FAB's
+        // TODO: the FAB's don't work, and I'm not sure why
+        .mdl-button--fab_flinger-container {
+
+            &.is-showing-options {
+
+                &>button i {
+                    transition: transform 0.3s linear;
+                    transform: rotate(45deg);
+                }
+
+                .mdl-button--fab_flinger-options {
+                    display: flex;
+                    flex-direction: column-reverse;
+
+                    button {
+                        display: block;
+                        animation-name: enter;
+                        animation-fill-mode: forwards;
+                        animation-duration: 0.1s;
+                        transform-origin: bottom center;
+
+                        &:nth-of-type(1) {
+                            animation-delay: 0.1s;
+                        }
+
+                        &:nth-of-type(2) {
+                            animation-delay: 0.2s;
+                        }
+
+                        &:nth-of-type(3) {
+                            animation-delay: 0.3s;
+                        }
+
+                        &:nth-of-type(4) {
+                            animation-delay: 0.4s;
+                        }
+
+                        &:nth-of-type(5) {
+                            animation-delay: 0.5s;
+                        }
+
+                        &:nth-of-type(6) {
+                            animation-delay: 0.6s;
+                        }
+                    }
+                }
+            }
+
+            .mdl-button--fab_flinger-options {
+                position: absolute;
+                bottom: 100%;
+                margin-bottom: 10px;
+
+                button {
+                    transform: scale(0);
+                    display: none;
+                }
+            }
+        }
+
+        .mdl-card__media {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 500;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            padding: 0px;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .mdl-card__supporting-text {
+            background-color: #f5f5f5;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        #fab_ctn {
+            position: absolute;
+            top: calc(100% - 92px);
+            right: 16px;
+        }
+    }
+}

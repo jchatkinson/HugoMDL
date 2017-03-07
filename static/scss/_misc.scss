@@ -1,0 +1,33 @@
+@keyframes enter {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(0.8);
+    }
+}
+
+// Fix for IE 10
+.mdl-grid {
+    display: flex !important;
+}
+
+.social-btn {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin: 0 16px;
+    cursor: pointer;
+    opacity: 0.46;
+    border-radius: 2px;
+    font-size: 1.5em;
+    color: rgb1(138, 138, 138, 1);
+}
+
+.social-btn__share {
+    color: rgba(0, 0, 0, 0.54);
+    background: transparent;
+}

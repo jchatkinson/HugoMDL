@@ -1,15 +1,7 @@
-{{ partial "header.html" . }}
-
-<div class="hugo-blog__posts mdl-grid">
-    <!-- profile card -->
-    {{ partial "profile.html" . }}
-    
-    <!-- list of x most recent post snippets-->
-    {{ partial "postsnippets.html" . }}
-    
-    <!-- Button to show all posts -->
-    {{ partial "showallposts.html" . }}
-
-</div>
-
-{{ partial "footer.html" . }}
+            {{- partial "header.html" . }}
+            <div class="hmdl-frontpage mdl-grid">
+                {{- partial "profile.html" . }}
+                {{- partial "postsnippets.html" . }}
+                {{- partial "showallposts.html" . }}
+            </div>
+            {{- partial "footer.html" . }}

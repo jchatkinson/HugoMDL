@@ -1,24 +1,15 @@
-{{"<!-- begin pagination partial //-->" | safeHTML}}
-{{ $pag := $.Paginator }}
-{{ if gt $pag.TotalPages 1 }}
-
-    <div class="pagination">
-        
-        <a href="{{ with $pag.First }}{{ .URL }}{{ end }}" aria-label="First"><span aria-hidden="true" title="first" role="button"><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i></span></a>
-        
-        <a {{ if not $pag.HasPrev }}class="disabled"{{ end }} href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" aria-label="Previous" title="previous" role="button"><span aria-hidden="true"><i class="material-icons_2x icon ion-android-arrow-dropleft"></i></span></a>
-        
-        <div>
-            {{ range $pag.Pagers }}
-                <a class="page-nums {{ if eq . $pag }}active{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
-            {{ end }}
-        </div>
-        
-        <a {{ if not $pag.HasNext }}class="disabled"{{ end }} href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true" title="next" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
-        
-        <a href="{{ with $pag.Last }}{{ .URL }}{{ end }}" aria-label="Last"><span aria-hidden="true" title="last" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
-        
-    </div>
-    
-{{ end }}
-{{"<!-- end pagination partial //-->" | safeHTML}}
+                    <!-- Pagination logic -->
+                    {{- $pag := $.Paginator }}
+                    {{- if gt $pag.TotalPages 1 }}
+                    <div class="pagination">
+                        <a href="{{ with $pag.First }}{{ .URL }}{{ end }}" aria-label="First"><span aria-hidden="true" title="first" role="button"><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i><i class="material-icons_2x icon ion-android-arrow-dropleft" ></i></span></a>
+                        <a {{ if not $pag.HasPrev }}class="disabled"{{ end }} href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" aria-label="Previous" title="previous" role="button"><span aria-hidden="true"><i class="material-icons_2x icon ion-android-arrow-dropleft"></i></span></a>
+                        <div>
+                            {{- range $pag.Pagers }}
+                            <a class="page-nums {{ if eq . $pag }}active{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+                            {{- end }}
+                        </div>
+                        <a {{ if not $pag.HasNext }}class="disabled"{{ end }} href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true" title="next" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
+                        <a href="{{ with $pag.Last }}{{ .URL }}{{ end }}" aria-label="Last"><span aria-hidden="true" title="last" role="button"><i class="material-icons_2x icon ion-android-arrow-dropright"></i><i class="material-icons_2x icon ion-android-arrow-dropright"></i></span></a>
+                    </div>
+                    {{- end }}

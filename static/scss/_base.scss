@@ -1,0 +1,33 @@
+body {
+    background-size: cover;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+
+    &:before {
+        background-size: cover;
+        background-attachment: fixed;
+        content: '';
+        will-change: transform;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: fixed;
+    }
+}
+
+main {
+    max-width: 900px;
+    // padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-shrink: 0;
+    justify-content: center;
+    padding-top: 160px;
+    padding-bottom: 80px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+
