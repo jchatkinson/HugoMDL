@@ -17,10 +17,10 @@
                     <div class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
                         {{ .Content }}
                     </div>
-                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
+                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments">
                         <a href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
                         <p>{{ .Params.author.description }}</p>
-                    </div>  
+                    </div>
                 </div>
             </div>
             {{- partial "footer.html" . }}

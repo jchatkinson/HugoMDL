@@ -21,8 +21,8 @@
     </script>
     {{- end }}
     {{- if .IsNode }}
-    <script src="/js/cardmedia.js"></script>
-    <script src="/js/fabbutton.js"></script>
+    <script src={{ "/js/cardmedia.js" | relURL }}></script>
+    <script src={{ "/js/fabbutton.js" | relURL }}></script>
     {{- end }}
     {{- partial "extra-footer.html" . }}
 </body>
