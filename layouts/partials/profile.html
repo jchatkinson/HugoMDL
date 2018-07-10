@@ -1,6 +1,6 @@
                 <!-- Card to display blogger's name, contact, etc -->
                 <div class="hmdl-profile-card mdl-card profile-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-                    <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600" style="background-image: url('{{ .Site.Params.image }}');">
+                    <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600" style="background-image: url('{{  .Site.Params.image  | relURL }}' );">
                     </div>
                     {{- partial "fab-buttons" . }}
                     <div class="hmdl-page-meta mdl-card__supporting-text meta--fill mdl-color-text--grey-600 ">

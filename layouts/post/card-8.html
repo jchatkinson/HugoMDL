@@ -1,6 +1,6 @@
                 <!-- Make a card view for posts -->
                 <div class="mdl-card mdl-cell mdl-cell--8-col">
-                    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background-image: url('{{.}}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
+                    <div class="mdl-card__media mdl-color-text--grey-50" style="{{with .Params.cardthumbimage}}background-image: url('{{ . | relURL }}' );{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
                         <h3><a href="{{ .RelPermalink }}" {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</a></h3>
                     </div>
                     <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -8,7 +8,7 @@
                     </div>
                     <div class="hmdl-page-meta mdl-card__supporting-text mdl-color-text--grey-600">
                         {{- with .Params.author.image }}
-                        <div class="minilogo" style="background-image: url('{{.}}');"></div>
+                        <div class="minilogo" style="background-image: url('{{ . | relURL }}' );"></div>
                         {{- end }}
                         <div>
                             <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
