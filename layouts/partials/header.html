@@ -56,7 +56,7 @@
     <title>{{ .Title }}</title>
 </head>
 <!-- TODO: rethink background -->
-<body style="background-image: url('{{  .Site.Params.background  | relURL }}');">
+<body style="background-image: url('{{ .Site.Params.background | relURL }}');">
     <div class="hmdl-body mdl-layout mdl-js-layout has-drawer is-upgraded">
         {{- if not (and .IsPage (eq .Type "presentation")) }}
             {{- partial "navbar.html" . }}

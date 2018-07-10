@@ -3,7 +3,7 @@
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                     <div id="hmdl-about-media" class="hmdl-page-banner mdl-card__media about-media" style="{{with .Params.cardheaderimage}}background-image: url('{{ . | relURL }}');{{end}} {{with .Params.cardbackground}}background-color:{{.}};{{end}}">
                         <div class="profile-pic-container">
-                            <div class="profilepic" style="background-image: url('{{  .Site.Params.avatar  | relURL }}');"></div>
+                            <div class="profilepic" style="background-image: url('{{ .Site.Params.avatar | relURL }}');"></div>
                         </div>
                     </div>
 
