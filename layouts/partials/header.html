@@ -14,7 +14,7 @@
     {{- else }}
         {{- $.Scratch.Set "favicon" "/images/favicon.ico" }}
     {{- end }}
-    <link rel="icon" type="image/png" href="{{ $.Scratch.Get "favicon" | relURL }}">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}{{ $.Scratch.Get "favicon" }}">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
