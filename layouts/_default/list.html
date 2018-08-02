@@ -9,7 +9,7 @@
                     <div class="mdl-card__list-item mdl-color-text--grey-600">
                         <div class="hmdl-page-meta">
                             {{- with .Params.author.image }}
-                            <div class="minilogo" style="background-image: url('{{ . }}');"></div>
+                            <div class="minilogo" style="background-image: url('{{ . | relURL }}');"></div>
                             {{- end }}
                             <div>
                                 <strong><a href="{{ .Params.author.website }}">{{ .Params.author.name }}</a></strong>
