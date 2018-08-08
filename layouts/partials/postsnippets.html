@@ -1,4 +1,4 @@
-{{- range $index, $element := first .Site.Params.frontpageposts (where .Site.Pages "Section" "post") }}
+{{- range $index, $element := first (default 6 .Site.Params.frontpageposts) (where .Site.Pages "Section" "post") }}
     {{- if (eq $index 0) }}
         {{- .Render "card-8" }}
     {{- else }}

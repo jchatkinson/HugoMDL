@@ -5,11 +5,11 @@
                         <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
                     </div>
                     <div class="hmdl-page-meta mdl-color-text--grey-700 mdl-card__supporting-text">
-                        {{- with .Params.author.image }}
+                        {{- with (default .Site.Params.avatar .Params.author.image) }}
                         <div class="minilogo" style="background-image: url('{{ . | relURL }}');"></div>
                         {{- end }}
                         <div>
-                            <strong>{{ .Params.author.name }}</strong>
+                            <strong>{{ default .Site.Params.author .Params.author.name}}</strong>
                             <span>{{ .Date.Format "Jan 2, 2006" }}</span>
                         </div>
                         <div class="section-spacer"></div>
@@ -17,10 +17,10 @@
                     <div class="hmdl-page-content mdl-color-text--grey-700 mdl-card__supporting-text">
                         {{ .Content }}
                     </div>
-                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments">
-                        <a href={{ .Params.author.website }}>{{ .Params.author.name }}</a>
-                        <p>{{ .Params.author.description }}</p>
-                    </div>
+                    <div class="hmdl-page-comments mdl-card__supporting-text comments"> 
+                        <a href="{{ default .Site.Params.website .Params.author.website }}">{{ default .Site.Params.author .Params.author.name }}</a>
+                        <p>{{ default .Site.Params.description .Params.author.description }}</p>
+                    </div>  
                 </div>
             </div>
             {{- partial "footer.html" . }}
