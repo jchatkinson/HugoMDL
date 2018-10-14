@@ -5,11 +5,11 @@
                         <h3 {{ with .Params.cardtitlecolor }}style="color:{{.}};"{{end}}>{{ title .Title }}</h3>
                     </div>
                     <div class="hmdl-page-meta mdl-color-text--grey-700 mdl-card__supporting-text">
-                        {{- with .Params.author.image }}
+                        {{- with (default .Site.Params.avatar .Params.author.image) }}
                         <div class="minilogo" style="background-image: url('{{ . | relURL }}');"></div>
                         {{- end }}
                         <div>
-                            <strong>{{ .Params.author.name }}</strong>
+                            <strong>{{ default .Site.Params.author .Params.author.name }}</strong>
                             <span>{{ .Date.Format "Jan 2, 2006" }}</span>
                         </div>
                         <div class="section-spacer"></div>
@@ -29,9 +29,9 @@
                         {{ .Content }}
                     </div>
                     
-                    <div class="hmdl-page-comments mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
-                        <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ .Params.author.name }}</a>
-                        {{- with .Params.author.description }}
+                    <div class="hmdl-page-comments mdl-card__supporting-text comments"> 
+                        <a {{with .Params.author.website }}href="{{.}}"{{end}}>{{ default .Site.Params.author .Params.author.name }}</a>
+                        {{- with (default .Site.Params.description .Params.author.description) }}
                         <p>{{.}}</p>
                         {{- end }}
                     </div>  
