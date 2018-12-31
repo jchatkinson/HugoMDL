@@ -31,12 +31,12 @@
     <meta name="msapplication-TileColor" content="#3372DF">
 
     <!-- Allow user to choose MDL theme -->
-    {{- if isset .Site.Params "mdlPrimary" }}
+    {{- if isset .Site.Params "mdlprimary" }}
         {{- $.Scratch.Set "mdlPrimary" .Site.Params.mdlPrimary }}
     {{- else }}
         {{- $.Scratch.Set "mdlPrimary" "grey" }}
     {{- end }}
-    {{- if isset .Site.Params "mdlAccent" }}
+    {{- if isset .Site.Params "mdlaccent" }}
         {{- $.Scratch.Set "mdlAccent" .Site.Params.mdlAccent }}
     {{- else }}
         {{- $.Scratch.Set "mdlAccent" "orange" }}
